@@ -53,18 +53,25 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Prakeiksmai</a>
                     </li>
+                    @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Prisijungti</a>
+                        <a class="nav-link" href="{{ route('login') }}">Prisijungti</a>
                     </li>
+                    @endguest
+                    @auth
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admin</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Burtažodžiai</a>
                             <a class="dropdown-item" href="#">Tipai</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Atsijungti</a>
+                            <a class="dropdown-item" href="#" onclick="document.getElementById('logout-form').submit()">Atsijungti</a>
+                            <form action="{{ route('logout') }}" method="POST" id="logout-form">
+                                @csrf
+                            </form>
                         </div>
                     </li>
+                    @endauth
                 </ul>
             </div>
         </div>
