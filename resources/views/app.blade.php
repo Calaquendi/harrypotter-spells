@@ -63,8 +63,8 @@
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admin</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="/admin">Admin</a>
-                            <a class="dropdown-item" href="#">Burtažodžiai</a>
-                            <a class="dropdown-item" href="#">Tipai</a>
+                            <a class="dropdown-item" href="{{ route('spells.index') }}">Burtažodžiai</a>
+                            <a class="dropdown-item" href="{{ route('types.index') }}">Tipai</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#" onclick="document.getElementById('logout-form').submit()">Atsijungti</a>
                             <form action="{{ route('logout') }}" method="POST" id="logout-form">
