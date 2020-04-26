@@ -45,7 +45,7 @@ class SpellController extends Controller
         Spell::create([
             'name' => $request->name,
             'full_name' => $request->full_name,
-            'type' => $request->type,
+            'type_id' => $request->type,
             'color' => $request->color,
             'effect' => $request->effect,
             'description' => $request->description,
@@ -98,7 +98,7 @@ class SpellController extends Controller
         $spell->update([
             'name' => $request->name,
             'full_name' => $request->full_name,
-            'type' => $request->type,
+            'type_id' => $request->type,
             'color' => $request->color,
             'effect' => $request->effect,
             'description' => $request->description,
