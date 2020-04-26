@@ -48,6 +48,6 @@ Auth::routes();
 Route::get('/admin', 'AdminController@index')->name('admin');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('types', 'TypeController');
-    Route::resource('spells', 'SpellController');
+    Route::resource('admin/types', 'TypeController');
+    Route::resource('admin/spells', 'SpellController');
 });
