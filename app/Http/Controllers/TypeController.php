@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreTypeRequest;
 use App\Type;
 use Illuminate\Http\Request;
 
@@ -35,8 +36,9 @@ class TypeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreTypeRequest $request)
     {
+
         Type::create([
             'name' => $request->name
         ]);
@@ -75,7 +77,7 @@ class TypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreTypeRequest $request, $id)
     {
         $type = Type::findOrFail($id);
         $type->update([
