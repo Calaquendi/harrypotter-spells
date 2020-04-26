@@ -18,3 +18,5 @@ Route::get('/', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/admin', 'AdminController@index')->name('admin');
+
+Route::resource('types', 'TypeController')->middleware('auth');
