@@ -35,23 +35,23 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Kerai</a>
+                        <a class="nav-link" href="{{ route('charm') }}">Kerai</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Transfigūracija</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="{{ route('transfiguration') }}" role="button" aria-haspopup="true" aria-expanded="false">Transfigūracija</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Sukūrimo kerai</a>
-                            <a class="dropdown-item" href="#">Transfigūraciniai kerai</a>
+                            <a class="dropdown-item" href="{{ route('conjuration') }}">Sukūrimo kerai</a>
+                            <a class="dropdown-item" href="{{ route('transformation') }}">Transfigūraciniai kerai</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Užkalbėjimai</a>
+                        <a class="nav-link" href="{{ route('jinx') }}">Užkalbėjimai</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Užkeikimai</a>
+                        <a class="nav-link" href="{{ route('hex') }}">Užkeikimai</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Prakeiksmai</a>
+                        <a class="nav-link" href="{{ route('curse') }}">Prakeiksmai</a>
                     </li>
                     @guest
                     <li class="nav-item">
