@@ -81,7 +81,7 @@
     <!-- Page Content -->
     <div class="container">
 
-        @yield('content');
+        @yield('content')
 
     </div>
     <!-- /.container -->
