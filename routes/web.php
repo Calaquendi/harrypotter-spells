@@ -19,4 +19,7 @@ Auth::routes();
 
 Route::get('/admin', 'AdminController@index')->name('admin');
 
-Route::resource('types', 'TypeController')->middleware('auth');
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('types', 'TypeController');
+    Route::resource('spells', 'SpellController');
+});
