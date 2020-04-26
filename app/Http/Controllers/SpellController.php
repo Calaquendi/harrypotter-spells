@@ -18,7 +18,7 @@ class SpellController extends Controller
     {
         $spells = Spell::all();
 
-        return view('spells.index', compact('spells'));
+        return view('admin.spells.index', compact('spells'));
     }
 
     /**
@@ -30,7 +30,7 @@ class SpellController extends Controller
     {
         $types = Type::all();
 
-        return view('spells.create', compact('types'));
+        return view('admin.spells.create', compact('types'));
     }
 
     /**
@@ -82,7 +82,7 @@ class SpellController extends Controller
         $spell = Spell::findOrFail($id);
         $types = Type::all();
 
-        return view('spells.edit', compact('spell', 'types'));
+        return view('admin.spells.edit', compact('spell', 'types'));
     }
 
     /**
