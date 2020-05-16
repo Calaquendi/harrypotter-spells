@@ -26,9 +26,9 @@
         <input type="text" name="full_name" value="{{ old('full_name') }}" class="form-control" />
         Tipas:
             <br />
-            <select name="type" class="form-control">
+            <select name="type_id" class="form-control">
                 @foreach($types as $type)
-                    <option value="{{ $type->id }}" @if ($type->id == old('type')) selected @endif>{{ $type->name }}</option>
+                    <option value="{{ $type->id }}" @if ($type->id == old('type_id')) selected @endif>{{ $type->name }}</option>
                 @endforeach
             </select>
         <br />
