@@ -31,7 +31,7 @@
         <br />
         <select name="type" class="form-control">
             @foreach($types as $type)
-            <option value="{{ $type->id }}" @if ($type->id == $spell->type) selected @endif>{{ $type->name }}</option>
+            <option value="{{ $type->type_id }}" @if ($type->type_id == $spell->type) selected @endif>{{ $type->name }}</option>
             @endforeach
         </select>
         <br />
