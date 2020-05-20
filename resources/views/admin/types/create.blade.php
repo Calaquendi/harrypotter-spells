@@ -21,6 +21,10 @@
         Pavadinimas:
         <br />
         <input type="text" name="name" value="{{ old('name') }}" class="form-control" />
+        <br />
+        Nuoroda (be LT raidžių ir tarpų):
+        <br />
+        {{ config('app.url')  }}/<input type="text" name="type_url" value="{{ old('type_url') }}" class="form-control" />
 
         <br />
 
