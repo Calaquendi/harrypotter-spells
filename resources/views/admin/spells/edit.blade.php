@@ -23,6 +23,10 @@
         <br />
         <input type="text" name="name" value="{{ $spell->name }}" class="form-control" />
         <br />
+        Nuoroda (be LT raidžių ir tarpų):
+        <br />
+        {{ config('app.url')  }}/<input type="text" name="spell_url" value="{{ $spell->spell_url }}" class="form-control" />
+        <br />
         Pilnas pavadinimas:
         <br />
         <input type="text" name="full_name" value="{{ $spell->full_name }}" class="form-control" />
