@@ -25,6 +25,7 @@ class StoreSpellRequest extends FormRequest
     {
         return [
             'name' => 'required',
+            'spell_url' => 'required',
             'full_name' => 'required',
             'type_id' => 'required',
             'effect' => 'required',
