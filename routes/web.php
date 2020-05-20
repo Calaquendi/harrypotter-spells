@@ -15,39 +15,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/kerai', function() {
-    return view('charm');
-})->name('charm');
 
-Route::get('/fransfiguracija', function() {
-    return view('transfiguration');
-})->name('transfiguration');
 
-Route::get('/sukurimo-kerai', function() {
-    return view('conjuration');
-})->name('conjuration');
 
-Route::get('/transfiguraciniai-kerai', function() {
-    return view('transformation');
-})->name('transformation');
 
-Route::get('/uzkalbejimai', function() {
-    return view('jinx');
-})->name('jinx');
-
-Route::get('/uzkeikimai', function() {
-    return view('hex');
-})->name('hex');
-
-Route::get('/prakeiksmai', function() {
-    return view('curse');
-})->name('curse');
+$router = app()->make('router');
+$types = App\Type::all();   
+foreach ($types as $type) {
+    $router->get($type->type_url, 'TypeController@index')->name($type->type_url);
+    Route::get('/'.$type->type_url.'/{spell_url}', 'SpellController@index');
+}
 
 Auth::routes();
 
 Route::get('/admin', 'AdminController@index')->name('admin');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('admin/types', 'TypeController');
-    Route::resource('admin/spells', 'SpellController');
+    Route::resource('admin/types', 'AdminTypeController');
+    Route::resource('admin/spells', 'AdminSpellController');
 });
