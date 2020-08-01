@@ -8,13 +8,13 @@
     <a href="{{ route('spells.create') }}" class="btn btn-info">Naujas burtažodis</a>
     <br /><br />
 
-    <table class="table">
+    <table class="table table-dark">
         <thead>
             <tr>
-                <th>Pavadinimas</th>
-                <th></th>
+                <th scope="col">Pavadinimas</th>
+                <th scope="col"></th>
                 @foreach ($spells as $spell)
-            <tr>
+            <tr scope="row">
                 <td>{{ $spell->name }}</td>
                 <td>
                     <a class="btn btn-primary" href="{{ route('spells.edit', $spell->id) }}">Keisti</a>
