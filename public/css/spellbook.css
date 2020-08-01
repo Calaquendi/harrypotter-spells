@@ -3,6 +3,96 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-heroic-features/blob/master/LICENSE)
  */
-body {
+
+ /*
+Template Color:
+#202040 - Dark Blue
+#543864 - Purple
+#ff6363 - Orange
+#ffbd69 - Yellow
+#3E3864 - Blue
+
+Template #2
+#151829 - Dark Blue
+#490550 - Dark Violet
+#812AAE - Violet
+#0ADDEB - Dark Turquoise
+#FAFAF8 - White/Grey
+
+ */
+
+/*:root {
+  --primary1: #151829;
+  --primary2: #490550;
+  --primary3: #812AAE;
+  --primary4: #0ADDEB;
+  --primary5: #FAFAF8;
+}*/
+
+/*:root {
+  --primary1: #202040;
+  --primary2: #543864;
+  --primary3: #ff6363;
+  --primary4: #ffbd69;
+  --primary5: #FAFAF8;
+}*/
+
+/* Main Design */
+
+:root {
+  --primary1: #272727;
+  --primary2: #FF652F;
+  --primary3: #FFE400;
+  --primary4: #14A76C;
+  --primary5: #747474;
+}
+
+html, body {
   padding-top: 56px;
+  background-color: var(--primary1);
+  color: var(--primary5);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+content {
+  flex: 1;
+}
+nav.navbar {
+  background-color: var(--primary1);
+}
+
+footer {
+  background-color: var(--primary1);
+}
+
+h1#spellTitle {
+  color: var(--primary3);
+}
+
+/* Main Page */
+
+blockquote#randomQuote {
+  width: 100%;
+  background-color: var(--primary4);
+  color: white;
+}
+
+
+
+/* Spell Page */
+
+h3.spellBlockTitle {
+  color: var(--primary4);
+  margin-bottom: 0.625em;
+}
+
+div.spellInfo {
+  margin-bottom: 1.563em;
+}
+
+div#spellName.badge-primary {
+  background-color: var(--primary2);
+  width: 100%;
+  padding: 0.625em;
 }
