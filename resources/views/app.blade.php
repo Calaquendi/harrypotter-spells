@@ -21,7 +21,7 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Start Bootstrap</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -79,17 +79,18 @@
             </div>
         </div>
     </nav>
+    <content>
+        <!-- Page Content -->
+        <div class="container">
 
-    <!-- Page Content -->
-    <div class="container">
+            @yield('content')
 
-        @yield('content')
-
-    </div>
+        </div>
+    </content>
     <!-- /.container -->
 
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
+    <footer class="py-5">
         <div class="container">
             <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
         </div>
