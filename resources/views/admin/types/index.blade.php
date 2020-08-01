@@ -8,7 +8,7 @@
     <a href="{{ route('types.create') }}" class="btn btn-info">Nauja burtažodžių rūšis</a>
     <br /><br />
 
-    <table class="table">
+    <table class="table table-dark">
         <thead>
             <tr>
                 <th>Pavadinimas</th>
