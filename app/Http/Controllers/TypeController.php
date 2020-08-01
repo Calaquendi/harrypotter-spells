@@ -16,7 +16,7 @@ class TypeController extends Controller
         $types = Type::all();
         foreach ($types as $type) {
             if (request()->is($type->type_url)) {
-                $spellList = Spell::where('type_id', $type->id)->get();
+                $spellList = Spell::where('type_id', $type->id)->orderBy('name', 'ASC')->get();
                 $typeName = $type->name;
             }
         }
