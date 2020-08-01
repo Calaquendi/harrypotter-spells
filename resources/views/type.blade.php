@@ -8,9 +8,11 @@
 
 <div class="container">
     <div class="row">
-        @foreach ($spellList as $spell)
-        <ul><li><a href="{{ $spell->type->type_url }}/{{ $spell->spell_url }}">{{ $spell->name }}</a></li></ul>
-        @endforeach
+        <ul class="list-unstyled">
+            @foreach ($spellList as $spell)
+            <li><a href="{{ $spell->type->type_url }}/{{ $spell->spell_url }}">{{ $spell->name }}</a></li>
+            @endforeach
+        </ul>
     </div>
 </div <!-- /.row -->
 
