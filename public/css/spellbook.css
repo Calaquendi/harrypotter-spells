@@ -45,6 +45,7 @@ Template #2
   --primary3: #FFE400;
   --primary4: #14A76C;
   --primary5: #747474;
+  --primary6: #FFFFFF;
 }
 
 html, body {
@@ -54,6 +55,12 @@ html, body {
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+a, a:visited, a:focus {
+  color: var(--primary3);
+}
+a:hover {
+  color: var(--primary2);
 }
 content {
   flex: 1;
@@ -82,6 +89,10 @@ blockquote#randomQuote {
 
 /* Spell Page */
 
+header {
+  color: var(--primary6);
+}
+
 h3.spellBlockTitle {
   color: var(--primary4);
   margin-bottom: 0.625em;
@@ -95,4 +106,30 @@ div#spellName.badge-primary {
   background-color: var(--primary2);
   width: 100%;
   padding: 0.625em;
+}
+#input-search, #button-search {
+  background: rgb(116 116 116 / 25%)!important;
+  border-color: transparent;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 25%);
+  transition: 0.3s ease-in-out;
+}
+#button-search:hover {
+  color: var(--primary3);
+}
+#input-search:focus {
+  color: var(--primary1);
+  background: var(--primary6)!important;
+}
+#input-search:focus ~ .input-group-append #button-search {
+  color: var(--primary1);
+  background: var(--primary6)!important;
+}
+#carouselTipes {
+  background-color: #3a3a3a;
+}
+.background-img-1 {
+  background-image: url(../img/background_forest.jpg);
+}
+.background-img-2 {
+  background-image: url(../img/background_books.jpg);
 }
