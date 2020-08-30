@@ -13,6 +13,14 @@
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
+    <!-- Fontawesome Kit JS -->
+    <script src="https://kit.fontawesome.com/e354dbdd31.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+
+    <!-- Custom js for this template -->
+    <script defer src="{{ asset('js/spellbook.js') }}"></script>
+
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/spellbook.css') }}" rel="stylesheet">
 
@@ -21,16 +29,16 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-transparent">
         <div class="container">
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
+            <!-- <a class="navbar-brand" href="#">Burtažodžiai.lt</a> -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/">Home
+                <ul class="navbar-nav text-uppercase">
+                    <li class="nav-item{{ (request()->is('/')) ? ' active' : '' }}">
+                        <a class="nav-link" href="/"><i class="fas fa-home"></i>
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
@@ -39,7 +47,7 @@
                     @endphp
                     @if ($types->count() > 0)
                     @foreach ($types as $type)
-                    <li class="nav-item">
+                    <li class="nav-item px-2{{ (request()->is($type->type_url.'*')) ? ' active' : '' }}">
                         <a class="nav-link" href="{{ route($type->type_url) }}">{{ $type->name }}</a>
                     </li>
                     @endforeach
@@ -89,13 +97,17 @@
     </content>
     <!-- /.container -->
 
-    <!-- Footer -->
-    <footer class="py-5">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
-        </div>
-        <!-- /.container -->
-    </footer>
+    @if (request()->is('/'))
+        <!-- No Footer -->
+    @else
+        <!-- Footer -->
+        <footer class="py-3">
+            <div class="container">
+                <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+            </div>
+            <!-- /.container -->
+        </footer>
+    @endif
 
     <!-- Bootstrap core JavaScript -->
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>

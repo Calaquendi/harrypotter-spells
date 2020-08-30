@@ -11,6 +11,7 @@ class TypeController extends Controller
     public function index()
     {
         $data = array();
+        $azIndex = array();
         $spellList = NULL;
         $typeName = NULL;
         $types = Type::all();
@@ -20,7 +21,11 @@ class TypeController extends Controller
                 $typeName = $type->name;
             }
         }
+        foreach ($spellList as $spell) {
+            array_push($azIndex, $spell->name[0]);
+        }
+        $azList = array_unique($azIndex);
        
-        return view('type', compact('typeName', 'spellList') );
+        return view('type', compact('typeName', 'spellList', 'azList') );
     }
 }

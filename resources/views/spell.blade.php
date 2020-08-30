@@ -4,7 +4,7 @@
 <!-- Page Features -->
 
 @foreach ($spells as $spell)
-<h1 class="my-4 text-center" id="spellTitle">{{ $spell->name }}</h1>
+<h1 class="display-4 my-4 text-center" id="spellTitle">{{ $spell->name }}</h1>
 
 <div class="container">
     <div class="row">

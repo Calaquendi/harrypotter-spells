@@ -21,15 +21,18 @@ Template #2
 
  */
 
-/*:root {
+/*
+:root {
   --primary1: #151829;
   --primary2: #490550;
   --primary3: #812AAE;
   --primary4: #0ADDEB;
   --primary5: #FAFAF8;
-}*/
+}
+*/
 
-/*:root {
+/*
+:root {
   --primary1: #202040;
   --primary2: #543864;
   --primary3: #ff6363;
@@ -38,22 +41,67 @@ Template #2
 }*/
 
 /* Main Design */
-
+/*
 :root {
   --primary1: #272727;
   --primary2: #FF652F;
   --primary3: #FFE400;
   --primary4: #14A76C;
   --primary5: #747474;
+  --primary6: #FFFFFF;
+}
+*/
+
+:root {
+  --primary1: #130c31;
+  --primary2: #d4b0a4;
+  --primary3: #ff524e;
+  --primary4: #40284c;
+  --primary5: #eae3f5;
+  --primary6: #FFFFFF;
+  --primary7: #FFE400;
+  --primary8: #7c6880;
+}
+
+.bg-primary1 {
+  background-color: var(--primary1);
+}
+.bg-primary2 {
+  background-color: var(--primary2);
+}
+.bg-primary3 {
+  background-color: var(--primary3);
+}
+.bg-primary4 {
+  background-color: var(--primary4);
+}
+.bg-primary5 {
+  background-color: var(--primary5);
+}
+.bg-primary6 {
+  background-color: var(--primary6);
+}
+.bg-primary7 {
+  background-color: var(--primary7);
+}
+.bg-primary8 {
+  background-color: var(--primary8);
 }
 
 html, body {
   padding-top: 56px;
-  background-color: var(--primary1);
+  /*background-color: var(--primary1);*/
+  background: linear-gradient(90deg,#130c31,#40284c);
   color: var(--primary5);
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+a, a:visited, a:focus {
+  color: var(--primary2);
+}
+a:hover {
+  color: var(--primary3);
 }
 content {
   flex: 1;
@@ -61,13 +109,23 @@ content {
 nav.navbar {
   background-color: var(--primary1);
 }
+.navbar-collapse.collapse.show {
+  background-color: var(--primary1);
+}
+.navbar-nav .nav-item.active .nav-link {
+box-shadow: 0 1px 0 #FFF;
+}
+.navbar-nav .nav-link:hover {
+  border-bottom: solid 1px #FFF!important;
+  
+}
 
 footer {
   background-color: var(--primary1);
 }
 
 h1#spellTitle {
-  color: var(--primary3);
+  color: var(--primary2);
 }
 
 /* Main Page */
@@ -82,8 +140,12 @@ blockquote#randomQuote {
 
 /* Spell Page */
 
+header {
+  color: var(--primary6);
+}
+
 h3.spellBlockTitle {
-  color: var(--primary4);
+  color: var(--primary8);
   margin-bottom: 0.625em;
 }
 
@@ -92,7 +154,41 @@ div.spellInfo {
 }
 
 div#spellName.badge-primary {
-  background-color: var(--primary2);
+  background-color: var(--primary3);
   width: 100%;
   padding: 0.625em;
+}
+#input-search, #button-search {
+  height: 7rem;
+  font-size: 2rem;
+  background: rgb(116 116 116 / 25%)!important;
+  border-color: transparent;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 25%);
+  transition: 0.3s ease-in-out;
+}
+#button-search {
+  width: 7rem;
+}
+#button-search:hover {
+  color: var(--primary3);
+}
+#input-search:focus {
+  color: var(--primary1);
+  background: var(--primary6)!important;
+}
+#input-search:focus ~ .input-group-append #button-search {
+  color: var(--primary1);
+  background: var(--primary6)!important;
+}
+@media only screen and (max-width: 480px) {
+  #input-search, #button-search {
+    font-size: 1.8rem;
+  }
+}
+#carouselTipes {
+  background-color: var(--primary4);
+}
+
+.breadcrumb-item a {
+  color: var(--primary4);
 }
