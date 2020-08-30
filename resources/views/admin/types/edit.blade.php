@@ -19,17 +19,37 @@
         @method('PUT')
         @csrf
 
-        Pavadinimas:
-        <br />
-        <input type="text" name="name" value="{{ $type->name }}" class="form-control" />
-        <br />
-        Nuoroda (be LT raidžių ir tarpų):
-        <br />
-        {{ config('app.url')  }}/<input type="text" name="type_url" value="{{ $type->type_url }}" class="form-control" />
+        <div class="form-group row justify-content-center">
+            <label for="name" class="col-sm-2 col-form-label">Pavadinimas:</label>
+            <div class="col-sm-6">
+                <input id="name" type="text" name="name" value="{{ $type->name }}" class="form-control" />
+            </div>
+        </div>
 
-        <br />
+        <div class="form-group row justify-content-center">
+            <label for="parent" class="col-sm-2 col-form-label">
+                Nuoroda (be LT raidžių ir tarpų):
+                <br />
+                <span class="badge badge-dark">{{ config('app.url')  }}/</span>
+            </label>
+            <div class="col-sm-6">
+                <select id="parent" name="parent" class="form-control">
+                    <option value="0" {{ $type->parent == $type->parent ? 'selected' : '' }}>0</option>
+                    @if ($types->count() > 0)
+                        @foreach ($types as $type)
+                            <option value="{{ $type->id }}" {{ $type->parent == $type->id ? 'selected' : '' }} >{{ $type->name }}</option>
+                        @endforeach
+                    @endif
+                </select>
+            </div>
+        </div>
 
-        <input type="submit" class="btn btn-primary" value="Išsaugoti" />
+        <div class="form-group row justify-content-center">
+            <div class="col-sm-8">
+                <input type="submit" class="btn btn-info" value="Išsaugoti" />
+            </div>
+        </div>
+
     </form>
     <br />
 </div>

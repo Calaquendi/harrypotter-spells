@@ -87,7 +87,30 @@ Template #2
 .bg-primary8 {
   background-color: var(--primary8);
 }
-
+.text-primary1 {
+  color: var(--primary1);
+}
+.text-primary2 {
+  color: var(--primary2);
+}
+.text-primary3 {
+  color: var(--primary3);
+}
+.text-primary4 {
+  color: var(--primary4);
+}
+.text-primary5 {
+  color: var(--primary5);
+}
+.text-primary6 {
+  color: var(--primary6);
+}
+.text-primary7 {
+  color: var(--primary7);
+}
+.text-primary8 {
+  color: var(--primary8);
+}
 html, body {
   padding-top: 56px;
   /*background-color: var(--primary1);*/
@@ -98,7 +121,7 @@ html, body {
   flex-direction: column;
 }
 a, a:visited, a:focus {
-  color: var(--primary2);
+  color: var(--primary6);
 }
 a:hover {
   color: var(--primary3);
@@ -191,4 +214,24 @@ div#spellName.badge-primary {
 
 .breadcrumb-item a {
   color: var(--primary4);
+}
+#typeName, #spellColor, #spellEffect {
+  padding: 0.5em;
+}
+#search-input {
+  background: #FFF;
+  width: 15rem;
+  margin-right: -35px;
+  padding-right: 35px;
+  border-style: solid;
+  outline: none;
+  box-shadow: none;
+}
+
+.dropdown-menu a {
+  color: var(--primary1);
+}
+
+#typeList a, #typeList a:visited, #typeList a:focus {
+  color: var(--primary2);
 }

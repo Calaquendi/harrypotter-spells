@@ -15,17 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('home');
 
-
-
-
-
 $router = app()->make('router');
 $types = App\Type::all();   
 foreach ($types as $type) {
     $router->get($type->type_url, 'TypeController@index')->name($type->type_url);
     Route::get('/'.$type->type_url.'/{spell_url}', 'SpellController@index');
 }
-
+Route::post('search/{search?}', 'SearchController@postSearch');
 Auth::routes();
 
 Route::get('/admin', 'AdminController@index')->name('admin');
@@ -33,4 +29,5 @@ Route::get('/admin', 'AdminController@index')->name('admin');
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('admin/types', 'AdminTypeController');
     Route::resource('admin/spells', 'AdminSpellController');
+    Route::resource('admin/users', 'AdminUsersController');
 });

@@ -8,15 +8,20 @@
     <a href="{{ route('types.create') }}" class="btn btn-info">Nauja burtažodžių rūšis</a>
     <br /><br />
 
-    <table class="table table-dark">
+    <table class="table table-dark bg-primary4">
         <thead>
             <tr>
+                <th>#</th>
                 <th>Pavadinimas</th>
+                <th>Parent #</th>
                 <th></th>
                 @foreach ($types as $type)
+            </tr>
             <tr>
+                <td>{{ $type->id }}</td>
                 <td>{{ $type->name }}</td>
-                <td>
+                <td>{{ $type->parent }}</td>
+                <td class="text-right">
                     <a class="btn btn-primary" href="{{ route('types.edit', $type->id) }}">Keisti</a>
 
                     <form action="{{ route('types.destroy', $type->id) }}" method="POST" style="display: inline">
@@ -27,7 +32,6 @@
                 </td>
             </tr>
             @endforeach
-            </tr>
         </thead>
     </table>
 </div>

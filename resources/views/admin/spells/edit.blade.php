@@ -3,7 +3,7 @@
 @section('content')
 <div class="col-lg-12">
 
-    <h1 class="my-4">Burtažodžio keitimas</h1>
+    <h1 class="my-4 text-center">Burtažodžio keitimas</h1>
 
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -19,66 +19,111 @@
         @method('PUT')
         @csrf
 
-        Pavadinimas:
-        <br />
-        <input type="text" name="name" value="{{ $spell->name }}" class="form-control" />
-        <br />
-        Nuoroda (be LT raidžių ir tarpų):
-        <br />
-        {{ config('app.url')  }}/<input type="text" name="spell_url" value="{{ $spell->spell_url }}" class="form-control" />
-        <br />
-        Pilnas pavadinimas:
-        <br />
-        <input type="text" name="full_name" value="{{ $spell->full_name }}" class="form-control" />
-        <br />
-        Tipas:
-        <br />
-        <select name="type_id" class="form-control">
-            @foreach($types as $type)
-            <option value="{{ $type->id }}" @if ($type->id == $spell->type_id) selected @endif>{{ $type->name }}</option>
-            @endforeach
-        </select>
-        <br />
-        Šviesa:
-        <br />
-        <input type="text" name="color" value="{{ $spell->color }}" class="form-control" />
-        <br />
-        Efektas:
-        <br />
-        <input type="text" name="effect" value="{{ $spell->effect }}" class="form-control" />
-        <br />
-        Aprašymas:
-        <br />
-        <textarea name="description" class="form-control">{{ $spell->description }}</textarea>
-        <br />
-        Citata:
-        <br />
-        <textarea name="quote" class="form-control">{{ $spell->quote }}</textarea>
-        <br />
-        Istorija:
-        <br />
-        <textarea name="history" class="form-control">{{ $spell->history }}</textarea>
-        <br />
-        Kerėjimas ir poveikis:
-        <br />
-        <textarea name="effect_full" class="form-control">{{ $spell->effect_full }}</textarea>
-        <br />
-        Papildomos skilties pavadinimas:
-        <br />
-        <input type="text" name="additional_title" value="{{ $spell->additional_title }}" class="form-control" />
-        <br />
-        Papildoma informacija:
-        <br />
-        <textarea name="additional" class="form-control">{{ $spell->additional }}</textarea>
-        <br />
-        Žodžio kilmė:
-        <br />
-        <textarea name="etymology" class="form-control">{{ $spell->etymology }}</textarea>
-        <br />
+        <div class="form-group row justify-content-center">
+            <label for="name" class="col-sm-2 col-form-label">Pavadinimas:</label>
+            <div class="col-sm-6">
+                <input id="name" type="text" name="name" value="{{ $spell->name }}" class="form-control" />
+            </div>
+        </div>
 
-        <br />
+        <div class="form-group row justify-content-center">
+            <label for="spell_url" class="col-sm-2 col-form-label">
+                Nuoroda (be LT raidžių ir tarpų):
+                <br />
+                <span class="badge badge-dark">{{ config('app.url')  }}/</span>
+            </label>
+            <div class="col-sm-6">
+                <input id="spell_url" type="text" name="spell_url" value="{{ $spell->spell_url }}" class="form-control" />
+            </div>
+        </div>
 
-        <input type="submit" class="btn btn-primary" value="Išsaugoti" />
+        <div class="form-group row justify-content-center">
+            <label for="name" class="col-sm-2 col-form-label">Pilnas pavadinimas:</label>
+            <div class="col-sm-6">
+                <input id="full_name" type="text" name="full_name" value="{{ $spell->full_name }}" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+            <label for="type_id" class="col-sm-2 col-form-label">Tipas:</label>
+            <div class="col-sm-6">
+                <select id="type_id" name="type_id" class="form-control">
+                    @foreach($types as $type)
+                        <option value="{{ $type->id }}" @if ($type->id == $spell->type_id) selected @endif>{{ $type->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+            <label for="color" class="col-sm-2 col-form-label">Šviesa:</label>
+            <div class="col-sm-6">
+                <input id="color" type="text" name="color" value="{{ $spell->color }}" class="form-control" />
+            </div>
+        </div>
+       
+        <div class="form-group row justify-content-center">
+            <label for="effect" class="col-sm-2 col-form-label">Efektas:</label>
+            <div class="col-sm-6">
+                <input id="effect" type="text" name="effect" value="{{ $spell->effect }}" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+            <label for="description" class="col-sm-2 col-form-label">Aprašymas:</label>
+            <div class="col-sm-6">
+                <textarea id="description" name="description" class="form-control">{{ $spell->description }}</textarea>
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+            <label for="quote" class="col-sm-2 col-form-label">Citata:</label>
+            <div class="col-sm-6">
+                <textarea id="quote" name="quote" class="form-control">{{ $spell->quote }}</textarea>
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+            <label for="history" class="col-sm-2 col-form-label">Istorija:</label>
+            <div class="col-sm-6">
+                <textarea id="history" name="history" class="form-control">{{ $spell->history }}</textarea>
+            </div>
+        </div>
+       
+        <div class="form-group row justify-content-center">
+            <label for="effect_full" class="col-sm-2 col-form-label">Kerėjimas ir poveikis:</label>
+            <div class="col-sm-6">
+                <textarea id="effect_full" name="effect_full" class="form-control">{{ $spell->effect_full }}</textarea>
+            </div>
+        </div>
+        
+        <div class="form-group row justify-content-center">
+            <label for="additional_title" class="col-sm-2 col-form-label">Papildomos skilties pavadinimas:</label>
+            <div class="col-sm-6">
+                <input id="additional_title" type="text" name="additional_title" value="{{ $spell->additional_title }}" class="form-control" />
+            </div>
+        </div>
+      
+        <div class="form-group row justify-content-center">
+            <label for="additional" class="col-sm-2 col-form-label">Papildoma informacija:</label>
+            <div class="col-sm-6">
+                <textarea id="additional" name="additional" class="form-control">{{ $spell->additional }}</textarea>
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+            <label for="etymology" class="col-sm-2 col-form-label">Žodžio kilmė:</label>
+            <div class="col-sm-6">
+                <textarea id="etymology" name="etymology" class="form-control">{{ $spell->etymology }}</textarea>
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+            <div class="col-sm-8">
+                <input type="submit" class="btn btn-info" value="Išsaugoti" />
+            </div>
+        </div>
+       
     </form>
     <br />
 </div>

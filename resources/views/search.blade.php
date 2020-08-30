@@ -3,6 +3,16 @@
 @section('content')
 <!-- Page Features -->
 
+<div class="row justify-content-center mb-3">
+    <div class="alert alert-info" role="alert">
+        @if (count($spells) > 0)
+            Pagal jūsų užklausą <span class="badge badge-secondary"><strong class="h6">{{ $search ?? "Viskas" }}</strong></span> suradome:
+        @else
+            Pagal jūsų užklausą <span class="badge badge-secondary"><strong class="h6">{{ $search ?? "Viskas" }}</strong></span> nieko suradome:
+        @endif
+    </div>
+</div>
+
 @foreach ($spells as $spell)
 <h1 class="display-4 my-4 text-center" id="spellTitle">{{ $spell->name }}</h1>
 

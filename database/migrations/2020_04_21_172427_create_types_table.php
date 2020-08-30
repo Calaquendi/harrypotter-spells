@@ -16,6 +16,8 @@ class CreateTypesTable extends Migration
         Schema::create('types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('type_url');
+            $table->integer('parent');
             $table->timestamps();
         });
     }

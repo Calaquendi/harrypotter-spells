@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Type extends Model
 {
-    protected $fillable = ['name', 'type_url'];
+    protected $fillable = ['name', 'type_url', 'parent'];
 
 }

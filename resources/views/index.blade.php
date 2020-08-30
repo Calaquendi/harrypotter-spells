@@ -26,16 +26,20 @@
 <img src="{{ asset('img/wand_'. rand(1, 6) .'.png') }}" class="w-100">
 -->
 <div style="margin-top:15vh;">
-<!-- Search -->
-<div class="row align-items-center">
-    <div class="input-group mb-4">
-        <input type="text" class="form-control form-control-lg" placeholder="Burtažodžio paieška" aria-label="Burtažodžio paieška" aria-describedby="button-search" id="input-search">
-        <div class="input-group-append">
-            <button class="btn btn-outline-light" type="button" id="button-search"><i class="fas fa-search"></i></button>
+    <!-- Search -->
+    {!! Form::open(array('url' => 'search', 'files' => true)) !!}
+    {{ csrf_field() }}
+    <div class="row align-items-center">
+        <div class="input-group mb-4">
+            <input id="input-search" name="search" type="text" class="form-control form-control-lg" placeholder="Burtažodžio paieška"
+                aria-label="Burtažodžio paieška" aria-describedby="button-search">
+            <div class="input-group-append">
+                <button id="button-search" type="submit" class="btn btn-outline-light"><i class="fas fa-search"></i></button>
+            </div>
         </div>
     </div>
-</div>
-<!-- /.row Search -->
+    {!! Form::close() !!}
+    <!-- /.row Search -->
 </div>
 
 <!-- Page Features -->

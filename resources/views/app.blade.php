@@ -43,38 +43,68 @@
                         </a>
                     </li>
                     @php
-                    $types = App\Type::all();
+                        $types = App\Type::orderBy('name', 'ASC')->get();
+                        $parents = array();
                     @endphp
+                    
                     @if ($types->count() > 0)
-                    @foreach ($types as $type)
-                    <li class="nav-item px-2{{ (request()->is($type->type_url.'*')) ? ' active' : '' }}">
-                        <a class="nav-link" href="{{ route($type->type_url) }}">{{ $type->name }}</a>
-                    </li>
-                    @endforeach
+                        @foreach ($types as $type)
+                            @php
+                                if ($type->parent != 0) {
+                                    array_push($parents, $type->parent);
+                                }
+                            @endphp
+                        @endforeach
+                        @foreach ($types as $type)
+                            @if ($type->parent == 0)
+                                @if (!in_array($type->id, $parents))
+                                    <li class="nav-item px-2{{ (request()->is($type->type_url.'*')) ? ' active' : '' }}">
+                                        <a class="nav-link" href="{{ route($type->type_url) }}">{{ $type->name }}</a>
+                                    </li>
+                                @else
+                                    @php
+                                        $statusActive = array();
+                                        foreach ($types as $type3) {
+                                            if ($type3->parent == $type->id) {
+                                                if (request()->is($type3->type_url.'*')) {
+                                                    array_push($statusActive, $type3->name);
+                                                }
+                                            }
+                                        }  
+                                    @endphp
+                                    <li class="nav-item px-2 dropdown{{ (count($statusActive)) ? ' active' : '' }}">
+                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ $type->name }}</a>
+                                        <div class="dropdown-menu">
+                                            @foreach ($types as $type2)
+                                                @if ($type2->parent == $type->id)
+                                                    <a class="dropdown-item" href="{{ route($type2->type_url) }}">{{ $type2->name }}</a>
+                                                @endif
+                                            @endforeach
+                                        </div>
+                                    </li>
+                                @endif
+                            @endif
+                        @endforeach
                     @endif
+
                     <!--
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Transfigūracija</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Sukūrimo kerai</a>
-                            <a class="dropdown-item" href="#">Transfigūraciniai kerai</a>
-                        </div>
-                    </li>
-
--->
-
                     @guest
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">Prisijungti</a>
                     </li>
                     @endguest
+                    -->
                     @auth
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admin</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-hat-wizard"></i> {{{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->email }}}
+                        </a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="/admin">Admin</a>
                             <a class="dropdown-item" href="{{ route('spells.index') }}">Burtažodžiai</a>
                             <a class="dropdown-item" href="{{ route('types.index') }}">Tipai</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ route('users.index') }}">Vartotojai</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#" onclick="document.getElementById('logout-form').submit()">Atsijungti</a>
                             <form action="{{ route('logout') }}" method="POST" id="logout-form">
@@ -84,6 +114,20 @@
                     </li>
                     @endauth
                 </ul>
+
+                @if (!request()->is('/'))
+                    {!! Form::open(array('url' => 'search', 'files' => true, 'class' => 'form-inline my-2 my-lg-0 mr-2 ml-auto')) !!}
+                    {{ csrf_field() }}
+                    <div class="input-group form-inline">
+                        <div id="search-wrapper">
+                            <input id="search-input" name="search" type="text" class="form-control form-control-sm" placeholder="Burtažodžio paieška"
+                                aria-label="Burtažodžio paieška" aria-describedby="button-search">
+                            <button id="search-button" type="submit" class="btn btn-sm btn-outline-light text-dark border-0 my-sm-0"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                   
+                    {!! Form::close() !!}
+                @endif
             </div>
         </div>
     </nav>

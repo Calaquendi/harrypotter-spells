@@ -22,14 +22,14 @@
     @endif
    
     <div class="row mb-3">
-        <ul class="list-unstyled">
+        <ul id="typeList" class="list-unstyled">
             @php
                 $azInd = null;
             @endphp
             @foreach ($spellList as $spell)
                 @php
                     if($azInd != $spell->name[0]) {
-                        echo '<button type="button" class="btn btn-sm btn-light ml-n5" id="azIndex-'. $spell->name[0] .'">'. $spell->name[0] .'</button>';
+                        echo '<button type="button" class="btn btn-sm btn-light ml-n5 mt-4" id="azIndex-'. $spell->name[0] .'">'. $spell->name[0] .'</button>';
                         $azInd = $spell->name[0];
                     }
                 @endphp

@@ -27,7 +27,8 @@ class AdminTypeController extends Controller
      */
     public function create()
     {
-        return view('admin.types.create');
+        $types = Type::all();
+        return view('admin.types.create', compact('types'));
     }
 
     /**
@@ -41,7 +42,8 @@ class AdminTypeController extends Controller
 
         Type::create([
             'name' => $request->name,
-            'type_url' => $request->type_url
+            'type_url' => $request->type_url,
+            'parent' => $request->parent
         ]);
 
         return redirect()->route('types.index');
@@ -67,8 +69,8 @@ class AdminTypeController extends Controller
     public function edit($id)
     {
         $type = Type::findOrFail($id);
-
-        return view('admin.types.edit', compact('type'));
+        $types = Type::all();
+        return view('admin.types.edit', compact('type', 'types'));
     }
 
     /**
@@ -83,7 +85,8 @@ class AdminTypeController extends Controller
         $type = Type::findOrFail($id);
         $type->update([
             'name' => $request->name,
-            'type_url' => $request->type_url
+            'type_url' => $request->type_url,
+            'parent' => $request->parent
         ]);
 
         return redirect()->route('types.index');
