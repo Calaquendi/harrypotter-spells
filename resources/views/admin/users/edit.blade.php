@@ -32,6 +32,13 @@
                 <input id="email" type="text" name="email" value="{{ $user->email }}" class="form-control" />
             </div>
         </div>
+
+        <div class="form-group row justify-content-center">
+            <label for="password" class="col-sm-2 col-form-label">Slaptažodis:</label>
+            <div class="col-sm-6">
+                <input id="password" type="password" name="password" value="{{ $user->password }}" class="form-control" />
+            </div>
+        </div>
         
         <div class="form-group row justify-content-center">
             <div class="col-sm-8">

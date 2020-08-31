@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-group row justify-content-center">
-            <label for="password" class="col-sm-2 col-form-label">El. paštas:</label>
+            <label for="password" class="col-sm-2 col-form-label">Slaptažodis:</label>
             <div class="col-sm-6">
                 <input id="password" type="password" name="password" value="{{ old('password') }}" class="form-control" />
             </div>

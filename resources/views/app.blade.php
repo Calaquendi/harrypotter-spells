@@ -90,7 +90,7 @@
                     <!--
                     @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Prisijungti</a>
+                        <a class="nav-link" href="{{ route('login') }}"><i class="fas fa-key"></i> Prisijungti</a>
                     </li>
                     @endguest
                     -->
@@ -104,9 +104,9 @@
                             <a class="dropdown-item" href="{{ route('spells.index') }}">Burtažodžiai</a>
                             <a class="dropdown-item" href="{{ route('types.index') }}">Tipai</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ route('users.index') }}">Vartotojai</a>
+                            <a class="dropdown-item" href="{{ route('users.index') }}"><i class="fas fa-users"></i> Vartotojai</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" onclick="document.getElementById('logout-form').submit()">Atsijungti</a>
+                            <a class="dropdown-item" href="#" onclick="document.getElementById('logout-form').submit()"><i class="fas fa-door-open"></i> Atsijungti</a>
                             <form action="{{ route('logout') }}" method="POST" id="logout-form">
                                 @csrf
                             </form>

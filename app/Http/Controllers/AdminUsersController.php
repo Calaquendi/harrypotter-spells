@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Http\Requests\CreateUsersRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminUsersController extends Controller
 {
@@ -42,7 +43,7 @@ class AdminUsersController extends Controller
         User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->password
+            'password' => Hash::make($request->password)
         ]);
 
         return redirect()->route('users.index');
@@ -84,6 +85,7 @@ class AdminUsersController extends Controller
         $user = User::find($id);
         $user->name = $request->input('name');
         $user->email = $request->input('email');
+        $user->password = Hash::make($request->input('password'));
         $user->save();
 
         return redirect('admin/users');

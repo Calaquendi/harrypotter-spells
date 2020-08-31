@@ -9,7 +9,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-3">
-            <div id="spellName" class="badge badge-primary mb-2">{{ $spell->full_name }}</div>
+            <div id="spellName" class="badge badge-primary mb-2 btn">{{ $spell->full_name }}</div>
             <div id="typeName"><span class="lead text-primary2 text-uppercase">Tipas:</span> <strong>{{ $spell->type->name }}</strong></div>
             <div id="spellColor"><span class="lead text-primary2 text-uppercase">Šviesa:</span> <strong>{{ $spell->color }}</strong></div>
             <div id="spellEffect"><span class="lead text-primary2 text-uppercase">Efektas:</span> <strong>{{ $spell->effect }}</strong></div>
@@ -17,9 +17,14 @@
         <div class="col-sm-9">
             <h3 class="spellBlockTitle">Aprašymas</h3>
             <div id="spellDesc">{{ $spell->description }}</div>
-            <blockquote class="blockquote">
-                <p class="mb-0 mt-4 font-italic font-weight-light">{{ $spell->quote }}</p>
-            </blockquote>
+
+            <div class="mt-5">
+                <div class="quote-left"><i class="fas fa-quote-left"></i></div>
+                <blockquote class="blockquote">
+                    <p class="mb-0 mt-4 font-italic font-weight-light">{{ $spell->quote }}</p>
+                </blockquote>
+            </div>
+
         </div>
         <div class="col-sm-12">
             @if( !empty($spell->history))
