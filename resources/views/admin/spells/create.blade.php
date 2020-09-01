@@ -1,6 +1,8 @@
 @extends('app')
 
 @section('content')
+<div class="container">
+
 <div class="col-lg-12">
 
     <h1 class="my-4 text-center">Naujas burtažodis</h1>
@@ -125,5 +127,7 @@
 
     </form>
     <br />
+</div>
+
 </div>
 @endsection

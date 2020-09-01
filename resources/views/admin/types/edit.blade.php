@@ -1,6 +1,8 @@
 @extends('app')
 
 @section('content')
+<div class="container">
+
 <div class="col-lg-12">
 
     <h1 class="my-4">Burtažodžių rūšies keitimas</h1>
@@ -52,5 +54,7 @@
 
     </form>
     <br />
+</div>
+
 </div>
 @endsection

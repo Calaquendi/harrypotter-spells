@@ -11,7 +11,7 @@
 </div>
 
 @section('content')
-
+<div class="container">
 <!-- Jumbotron Header -->
 
 <header class="input-group my-4 justify-content-center d-none d-md-block">
@@ -125,5 +125,5 @@
 </div>
 -->
 <!-- /.div Tipe Carousel -->
-
+</div>
 @endsection

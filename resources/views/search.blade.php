@@ -1,6 +1,7 @@
 @extends('app')
 
 @section('content')
+<div class="container">
 <!-- Page Features -->
 
 <div class="row justify-content-center mb-3">
@@ -52,4 +53,5 @@
     </div>
 </div <!-- /.row -->
 @endforeach
+</div>
 @endsection

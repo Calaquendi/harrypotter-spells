@@ -1,8 +1,8 @@
 @extends('app')
 
 @section('content')
+<div class="container">
 <!-- Page Features -->
-
 
 <h1 class="my-4">{{ $typeName }}</h1>
 
@@ -39,4 +39,5 @@
     </div>
 </div <!-- /.row -->
 
+</div>
 @endsection

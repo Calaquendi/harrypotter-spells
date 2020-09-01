@@ -1,6 +1,8 @@
 @extends('app')
 
 @section('content')
+<div class="container">
+
 <div class="col-lg-12">
 
     <h1 class="my-4">Burtažodžių rūšys</h1>
@@ -34,5 +36,7 @@
             @endforeach
         </thead>
     </table>
+</div>
+
 </div>
 @endsection

@@ -1,6 +1,7 @@
 @extends('app')
 
 @section('content')
+<div class="container">
 <!-- Page Features -->
 
 @foreach ($spells as $spell)
@@ -47,4 +48,5 @@
     </div>
 </div <!-- /.row -->
 @endforeach
+</div>
 @endsection
