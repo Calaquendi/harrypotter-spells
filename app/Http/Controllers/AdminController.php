@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Spell;
+use App\Type;
+use App\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -23,6 +26,10 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $spells = Spell::all();
+        $types = Type::all();
+        $users = User::all();
+
+        return view('admin.index', compact('spells', 'types', 'users'));
     }
 }

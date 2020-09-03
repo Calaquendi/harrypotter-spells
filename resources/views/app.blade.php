@@ -30,7 +30,7 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-transparent">
-        <div class="container">
+        <div class="container justify-content-end">
             <!-- <a class="navbar-brand" href="#">Burtažodžiai.lt</a> -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -100,7 +100,7 @@
                             <i class="fas fa-hat-wizard"></i> {{{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->email }}}
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/admin">Admin</a>
+                            <a class="dropdown-item" href="{{ route('admin') }}">Dashboard</a>
                             <a class="dropdown-item" href="{{ route('spells.index') }}">Burtažodžiai</a>
                             <a class="dropdown-item" href="{{ route('types.index') }}">Tipai</a>
                             <div class="dropdown-divider"></div>

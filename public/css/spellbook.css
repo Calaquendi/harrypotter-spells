@@ -293,11 +293,12 @@ body::-webkit-scrollbar {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 1020;
+  z-index: 1050;
+  margin-top: -3.5rem;
 }
 .sidebar {
   position: fixed;
-  top: 3.5rem;
+  top: 0;
   bottom: 0;
   left: 0;
   z-index: 100;
@@ -312,6 +313,6 @@ body::-webkit-scrollbar {
   overflow-x: hidden;
   overflow-y: auto;
 }
-.main {
-  top: -3.5rem;
+main {
+  /*margin-top: -3.5rem;*/
 }
