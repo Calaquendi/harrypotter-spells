@@ -256,6 +256,7 @@ body::-webkit-scrollbar {
   z-index: 100;
   margin-top: 3.5rem;
   margin-bottom: 3.5rem;
+  background-image: -webkit-linear-gradient(90deg,var(--primary1),var(--primary4));
 }
 .sidebar-sticky {
   position: relative;
