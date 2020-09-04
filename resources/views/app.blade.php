@@ -100,9 +100,9 @@
                             <i class="fas fa-hat-wizard"></i> {{{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->email }}}
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ route('admin') }}">Dashboard</a>
-                            <a class="dropdown-item" href="{{ route('spells.index') }}">Burtažodžiai</a>
-                            <a class="dropdown-item" href="{{ route('types.index') }}">Tipai</a>
+                            <a class="dropdown-item" href="{{ route('admin') }}"><i class="fas fa-columns"></i> Dashboard</a>
+                            <a class="dropdown-item" href="{{ route('spells.index') }}"><i class="fas fa-magic"></i> Burtažodžiai</a>
+                            <a class="dropdown-item" href="{{ route('types.index') }}"><i class="fas fa-th"></i> Tipai</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('users.index') }}"><i class="fas fa-users"></i> Vartotojai</a>
                             <div class="dropdown-divider"></div>
