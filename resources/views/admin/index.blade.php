@@ -22,79 +22,105 @@
         </nav>
     </div>
 
-    <div class="row">
-        
-        @php
-            $parents = array(); 
-        @endphp
-        @foreach ($types as $type)
-            @php
-                if ($type->parent != 0) {
-                    array_push($parents, $type->parent);
-                }
-            @endphp
-        @endforeach
-        
-        @foreach ($types as $type)
-            @if (!in_array($type->id, $parents))
-                @php
-                    $spell_types = 0;
-                @endphp
-                @foreach ($spells as $spell)
-                    @if ($spell->type_id == $type->id)
-                        @php
-                            $spell_types++;
-                        @endphp
-                    @endif
-                @endforeach
-
-                <div class="card text-dark mb-3 mx-3" style="max-width: 18rem;">
-                    <div class="card-header font-trajan">{{ $type->name }}</div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">{{ $spell_types }}</h5>
-                    </div>
-                </div>
-            @endif
-        @endforeach
-
-    </div>
-
-    
     <div class="row mx-0">
 
-        @php
-            $parents = array(); 
-        @endphp
-        @foreach ($types as $type)
+        <div class="col-4">
             @php
-                if ($type->parent != 0) {
-                    array_push($parents, $type->parent);
-                }
+                $parents = array();
+                $typeNames = array();
+                $spellCounts = array();
             @endphp
-        @endforeach
-        
-        <ul class="list-group">
-        @foreach ($types as $type)
-            @if (!in_array($type->id, $parents))
+            @foreach ($types as $type)
                 @php
-                    $spell_types_count = 0;
+                    if ($type->parent != 0) {
+                        array_push($parents, $type->parent);
+                    }
                 @endphp
-                @foreach ($spells as $spell)
-                    @if ($spell->type_id == $type->id)
-                        @php
-                            $spell_types_count++;
-                        @endphp
-                    @endif
-                @endforeach
+            @endforeach
+            
+            <ul class="list-group">
+            @foreach ($types as $type)
+                @if (!in_array($type->id, $parents))
+                    @php
+                        $spell_types_count = 0;
+                        array_push($typeNames, $type->name);
+                    @endphp
+                    @foreach ($spells as $spell)
+                        @if ($spell->type_id == $type->id)
+                            @php
+                                $spell_types_count++;
+                            @endphp
+                        @endif
+                    @endforeach
+                    @php
+                        array_push($spellCounts, $spell_types_count);   
+                    @endphp
+                    <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action font-trajan">
+                        <a href="admin/spells/type_id/{{ $type->id }}" class="text-dark">{{ $type->name }}</a>
+                        <span class="badge badge-info ml-5">{{ $spell_types_count }}</span>
+                    </li>
+                @endif
+            @endforeach
+            </ul>
+        </div>
+        <div class="col-4">
+            <canvas id="typesChart" width="300" height="200"></canvas>
+            <!-- Chart JS -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
+            <script>
+                var colors = [
+                    '#E1B689',
+                    '#bd524c',
+                    '#93B7BE',
+                    '#7c6880',
+                    '#3A3C55',
+                    '#383c72'
+                ];
+                var xAxisLabelMinWidth = 15;
+                var ctx = document.getElementById('typesChart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    // The type of chart we want to create
+                    type: 'horizontalBar',
 
-                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action font-trajan">
-                    <a href="admin/spells/type_id/{{ $type->id }}" class="text-dark">{{ $type->name }}</a>
-                    <span class="badge badge-info ml-5">{{ $spell_types_count }}</span>
-                </li>
-            @endif
-        @endforeach
-        </ul>
+                    // The data for our dataset
+                    data: {
+                        labels: {!! json_encode($typeNames) !!},
+                        datasets: [{
+                            label: 'Burtažodžių tipai',
+                            backgroundColor: colors,
+                            borderColor: colors,
+                            borderWidth: 1,
+                            pointStyle: 'star',
+                            data: {!! json_encode($spellCounts) !!}
+                        }]
+                    },
 
+                    // Configuration options go here
+                    options: {
+                        responsive: true,
+                        legend: {
+                            display: false
+                        },
+                        scales: {
+                            xAxes: [{
+                                ticks: {
+                                    beginAtZero: true,
+                                    stepSize: 1
+                                }
+                            }]
+                        }
+                    }
+                });
+                function fitChart(){
+                    var chartCanvas = document.getElementById('typesChart');
+                    var maxWidth = chartCanvas.parentElement.parentElement.clientWidth;
+                    var width = Math.max(chart.data.labels.length * xAxisLabelMinWidth, maxWidth);
+
+                    chartCanvas.parentElement.style.width = width +'px';
+                }
+                fitChart();
+            </script>
+        </div>
     </div>
 
 @endsection
