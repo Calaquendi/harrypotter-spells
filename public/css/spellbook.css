@@ -270,6 +270,14 @@ main {
   /*margin-top: -3.5rem;*/
   min-height: calc(100vh - 56px);
 }
+
+#sidebarMenu a {
+  color: var(--primary1);
+}
+#sidebarMenu a:hover {
+  color: var(--primary3);
+}
+
 @media only screen and (max-width: 991px) {
   #navbarResponsive {
     margin-left: -1rem;
@@ -278,9 +286,9 @@ main {
     padding-top: 1rem;
   }
 }
-#sidebarMenu a {
-  color: var(--primary1);
-}
-#sidebarMenu a:hover {
-  color: var(--primary3);
+@media only screen and (max-width: 420px) {
+  #typesChart {
+    width: 360px!important;
+    height: 225px!important;
+  }
 }
