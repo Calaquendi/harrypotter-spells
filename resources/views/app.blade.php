@@ -15,8 +15,12 @@
 
     <!-- Fontawesome Kit JS -->
     <script src="https://kit.fontawesome.com/e354dbdd31.js" crossorigin="anonymous"></script>
-
+    
+    <!-- Parallax JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    
+    <!-- Chart JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
 
     <!-- Custom js for this template -->
     <script defer src="{{ asset('js/spellbook.js') }}"></script>
