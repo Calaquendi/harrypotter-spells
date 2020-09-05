@@ -78,8 +78,8 @@ html, body {
   display: flex;
   flex-direction: column;
 }
-a, a:visited, a:focus {
-  color: var(--primary1);
+a, a:focus {
+  color: var(--primary6);
 }
 a:hover {
   color: var(--primary3);
@@ -268,7 +268,7 @@ body::-webkit-scrollbar {
 }
 main {
   /*margin-top: -3.5rem;*/
-  height: calc(100vh - 56px);
+  min-height: calc(100vh - 56px);
 }
 @media only screen and (max-width: 991px) {
   #navbarResponsive {
@@ -277,4 +277,10 @@ main {
     padding-left: 1rem;
     padding-top: 1rem;
   }
+}
+#sidebarMenu a {
+  color: var(--primary1);
+}
+#sidebarMenu a:hover {
+  color: var(--primary3);
 }

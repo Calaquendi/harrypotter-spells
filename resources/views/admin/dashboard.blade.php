@@ -41,7 +41,9 @@
             </div>
             
             <!-- Page Content -->
-            @yield('admin_content')
+            <div class="text-dark">
+                @yield('admin_content')
+            </div>
 
         </main>
     </div>

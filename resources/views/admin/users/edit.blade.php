@@ -44,7 +44,7 @@
             
             <div class="form-group row justify-content-center">
                 <div class="col-sm-8">
-                    <input type="submit" class="btn btn-info" value="Išsaugoti" />
+                    <input type="submit" class="btn btn-info btn-sm" value="Išsaugoti" />
                 </div>
             </div>
 
