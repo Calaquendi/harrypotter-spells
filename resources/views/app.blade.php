@@ -139,7 +139,7 @@
     </content>
     <!-- /.container -->
 
-    @if (request()->is('/'))
+    @if (request()->is('/') or request()->is('admin*'))
         <!-- No Footer -->
     @else
         <!-- Footer -->

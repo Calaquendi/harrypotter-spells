@@ -7,7 +7,7 @@
 :root {
   --primary1: #151716;
   --primary2: #E1B689;
-  --primary3: #9C3933;
+  --primary3: #bd524c;
   --primary4: #3A3C55;
   --primary5: #93B7BE;
   --primary6: #eae3f5;
@@ -79,7 +79,7 @@ html, body {
   flex-direction: column;
 }
 a, a:visited, a:focus {
-  color: var(--primary6);
+  color: var(--primary1);
 }
 a:hover {
   color: var(--primary3);
@@ -255,8 +255,8 @@ body::-webkit-scrollbar {
   left: 0;
   z-index: 100;
   margin-top: 3.5rem;
-  margin-bottom: 3.5rem;
-  background-image: -webkit-linear-gradient(90deg,var(--primary1),var(--primary4));
+  /*margin-bottom: 3.5rem;*/
+  /*background-image: -webkit-linear-gradient(90deg,var(--primary1),var(--primary4));*/
 }
 .sidebar-sticky {
   position: relative;
@@ -268,4 +268,13 @@ body::-webkit-scrollbar {
 }
 main {
   /*margin-top: -3.5rem;*/
+  height: calc(100vh - 56px);
+}
+@media only screen and (max-width: 991px) {
+  #navbarResponsive {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
+  }
 }

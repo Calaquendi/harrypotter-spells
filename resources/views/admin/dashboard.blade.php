@@ -2,13 +2,13 @@
 
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <i class="fas fa-columns"></i>
     </button>
 </nav>
 
 <div class="container-fluid">
     <div class="row">
-        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-primary4 sidebar collapse">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
             <div class="sidebar-sticky pt-3">
                 <ul class="nav flex-column">
                     <li class="nav-item">
@@ -35,9 +35,9 @@
             </div>
         </nav>
   
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 bg-white">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2 text-primary2">Dashboard</h1>
+                <h1 class="h2 text-primary8">Dashboard</h1>
             </div>
             
             <!-- Page Content -->
