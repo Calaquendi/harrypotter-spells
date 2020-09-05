@@ -59,4 +59,42 @@
 
     </div>
 
+    
+    <div class="row mx-0">
+
+        @php
+            $parents = array(); 
+        @endphp
+        @foreach ($types as $type)
+            @php
+                if ($type->parent != 0) {
+                    array_push($parents, $type->parent);
+                }
+            @endphp
+        @endforeach
+        
+        <ul class="list-group">
+        @foreach ($types as $type)
+            @if (!in_array($type->id, $parents))
+                @php
+                    $spell_types_count = 0;
+                @endphp
+                @foreach ($spells as $spell)
+                    @if ($spell->type_id == $type->id)
+                        @php
+                            $spell_types_count++;
+                        @endphp
+                    @endif
+                @endforeach
+
+                <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action font-trajan">
+                    {{ $type->name }}
+                    <span class="badge badge-info ml-5">{{ $spell_types_count }}</span>
+                </li>
+            @endif
+        @endforeach
+        </ul>
+
+    </div>
+
 @endsection
