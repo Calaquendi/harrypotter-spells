@@ -29,5 +29,6 @@ Route::get('/admin', 'AdminController@index')->name('admin');
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('admin/types', 'AdminTypeController');
     Route::resource('admin/spells', 'AdminSpellController');
+    Route::resource('admin/spells/{filter}/{id}', 'AdminSpellController');
     Route::resource('admin/users', 'AdminUsersController');
 });

@@ -14,10 +14,14 @@ class AdminSpellController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($filter = null, $id = null)
     {
-        $spells = Spell::all();
-
+        if ($filter != null && $id != null) {
+            $spells = Spell::where($filter, $id)->get();
+        } else {
+            $spells = Spell::all();
+        }
+        
         return view('admin.spells.index', compact('spells'));
     }
 

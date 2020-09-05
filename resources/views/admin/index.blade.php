@@ -88,7 +88,7 @@
                 @endforeach
 
                 <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action font-trajan">
-                    {{ $type->name }}
+                    <a href="admin/spells/type_id/{{ $type->id }}" class="text-dark">{{ $type->name }}</a>
                     <span class="badge badge-info ml-5">{{ $spell_types_count }}</span>
                 </li>
             @endif
