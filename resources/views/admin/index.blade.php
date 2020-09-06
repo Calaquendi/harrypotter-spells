@@ -20,8 +20,11 @@
                 <li class="breadcrumb-item" aria-current="page"><span class="badge bg-info text-light">{{ $users->count() }}</span> Vartotojai</li>
             </ol>
         </nav>
-    </div>
+    </div> <!-- .lead mb-3 End -->
 
+    <hr>
+
+    <div class="lead mb-3">Burtažodžių tipai</div>
     <div class="row mx-0">
 
         <div class="col-md-4">
@@ -121,6 +124,10 @@
                 fitChart();
             </script>
         </div>
-    </div>
+    </div> <!-- .row mx-0 END -->
+
+    <hr>
+
+    <div class="lead mb-3">Paieškos statistika</div>
 
 @endsection
