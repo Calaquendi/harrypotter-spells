@@ -35,7 +35,6 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-transparent">
         <div class="container justify-content-end">
-            <!-- <a class="navbar-brand" href="#">Burtažodžiai.lt</a> -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -91,13 +90,6 @@
                         @endforeach
                     @endif
 
-                    <!--
-                    @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}"><i class="fas fa-key"></i> Prisijungti</a>
-                    </li>
-                    @endguest
-                    -->
                     @auth
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
