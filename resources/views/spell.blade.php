@@ -18,12 +18,12 @@
         </div>
         <div class="col-sm-9">
             <h3 class="spellBlockTitle">Aprašymas</h3>
-            <div id="spellDesc">{{!! $spell->description !!}}</div>
+            <div id="spellDesc">{!! $spell->description !!}</div>
 
             <div class="mt-5">
                 <div class="quote-left"><i class="fas fa-quote-left"></i></div>
                 <blockquote class="blockquote">
-                    <p class="mb-0 mt-4 font-italic font-weight-light">{{!! $spell->quote !!}}</p>
+                    <p class="mb-0 mt-4 font-italic font-weight-light">{!! $spell->quote !!}</p>
                 </blockquote>
             </div>
 
@@ -32,11 +32,11 @@
         <div class="col-sm-12 mt-3">
             @if( !empty($spell->history))
             <h3 class="spellBlockTitle">Istorija</h3>
-            <div class="spellInfo">{{!! $spell->history !!}}</div>
+            <div class="spellInfo">{!! $spell->history !!}</div>
             @endif
             @if( !empty($spell->effect_full))
             <h3 class="spellBlockTitle">Kerėjimas ir poveikis</h3>
-            <div class="spellInfo">{{!! $spell->effect_full !!}}</div>
+            <div class="spellInfo">{!! $spell->effect_full !!}</div>
             @endif
             @if( !empty($spell->additional))
             <h3 class="spellBlockTitle">{{ $spell->additional_title }}</h3>
@@ -44,7 +44,7 @@
             @endif
             @if( !empty($spell->etymology))
             <h3 class="spellBlockTitle">Žodžio kilmė</h3>
-            <div class="spellInfo">{{!! $spell->etymology !!}}</div>
+            <div class="spellInfo">{!! $spell->etymology !!}</div>
             @endif
         </div>
     </div>
