@@ -129,7 +129,7 @@
 
     <div class="row mx-0">
         <div class="col-md-6">
-            <div class="lead mb-3">TOP 20 aplankomų burtažodžių</div>
+            <div class="lead mb-3">TOP 10 aplankomų burtažodžių</div>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
                     <thead class="bg-primary5">
@@ -160,14 +160,11 @@
             <!-- Chart JS -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
             <script>
-                var colors = [
-                    '#E1B689',
-                    '#bd524c',
-                    '#93B7BE',
-                    '#7c6880',
-                    '#3A3C55',
-                    '#383c72'
-                ];
+                var colors = [];
+                for(i=1; i<=10; i++){
+                    var hex = Math.floor(Math.random()*16777215).toString(16);
+                    colors.push('#'+hex);  
+                }
                 var xAxisLabelMinWidth = 15;
                 var ctx = document.getElementById('spellsChart').getContext('2d');
                 var chart = new Chart(ctx, {
@@ -196,7 +193,7 @@
                             xAxes: [{
                                 ticks: {
                                     beginAtZero: true,
-                                    stepSize: 1
+                                    stepSize: Math.round({!! json_encode($spellCounts[0]) !!} * 0.20)
                                 }
                             }]
                         }

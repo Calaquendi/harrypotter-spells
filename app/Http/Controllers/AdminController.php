@@ -33,7 +33,7 @@ class AdminController extends Controller
         $users = User::all();
         $log_spells = Log_spell::all();
         $log_searches = Log_search::all();
-        $log_spells_top = Log_spell::orderBy('visits', 'DESC')->limit(20)->get();
+        $log_spells_top = Log_spell::orderBy('visits', 'DESC')->limit(10)->get();
         $log_searches_top = Log_search::orderBy('visits', 'DESC')->limit(10)->get();
         $log_last_searches = Log_search::orderBy('updated_at', 'DESC')->limit(10)->get();
 
