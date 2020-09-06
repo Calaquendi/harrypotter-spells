@@ -78,28 +78,28 @@
             <div class="form-group row justify-content-center">
                 <label for="description" class="col-sm-2 col-form-label">Aprašymas<span class="text-primary3" data-toggle="tooltip" data-placement="top" title="Būtina įrašyti">*</span>:</label>
                 <div class="col-sm-6">
-                    <textarea id="description" name="description" class="form-control">{{ old('description') }}</textarea>
+                    <textarea id="description" name="description" class="form-control" rows="7">{{ old('description') }}</textarea>
                 </div>
             </div>
 
             <div class="form-group row justify-content-center">
                 <label for="quote" class="col-sm-2 col-form-label">Citata:</label>
                 <div class="col-sm-6">
-                    <textarea id="quote" name="quote" class="form-control">{{ old('quote') }}</textarea>
+                    <textarea id="quote" name="quote" class="form-control" rows="4">{{ old('quote') }}</textarea>
                 </div>
             </div>
 
             <div class="form-group row justify-content-center">
                 <label for="history" class="col-sm-2 col-form-label">Istorija:</label>
                 <div class="col-sm-6">
-                    <textarea id="history" name="history" class="form-control">{{ old('history') }}</textarea>
+                    <textarea id="history" name="history" class="form-control" rows="7">{{ old('history') }}</textarea>
                 </div>
             </div>
 
             <div class="form-group row justify-content-center">
                 <label for="effect_full" class="col-sm-2 col-form-label">Kerėjimas ir poveikis:</label>
                 <div class="col-sm-6">
-                    <textarea name="effect_full" class="form-control">{{ old('effect_full') }}</textarea>
+                    <textarea name="effect_full" class="form-control" rows="7">{{ old('effect_full') }}</textarea>
                 </div>
             </div>
 
@@ -113,14 +113,14 @@
             <div class="form-group row justify-content-center">
                 <label for="additional" class="col-sm-2 col-form-label">Papildoma informacija:</label>
                 <div class="col-sm-6">
-                    <textarea id="additional" name="additional" class="form-control">{{ old('additional') }}</textarea>
+                    <textarea id="additional" name="additional" class="form-control" rows="7">{{ old('additional') }}</textarea>
                 </div>
             </div>
 
             <div class="form-group row justify-content-center">
                 <label for="etymology" class="col-sm-2 col-form-label">Žodžio kilmė:</label>
                 <div class="col-sm-6">
-                    <textarea id="etymology" name="etymology" class="form-control">{{ old('etymology') }}</textarea>
+                    <textarea id="etymology" name="etymology" class="form-control" rows="7">{{ old('etymology') }}</textarea>
                 </div>
             </div>
 
