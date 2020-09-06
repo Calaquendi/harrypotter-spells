@@ -6,6 +6,7 @@ use App\Http\Requests\StoreSpellRequest;
 use App\Spell;
 use App\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdminSpellController extends Controller
 {
@@ -46,9 +47,19 @@ class AdminSpellController extends Controller
     public function store(StoreSpellRequest $request)
     {
 
+        if (is_null($request->file('img'))) {
+            $path = '';
+        } else {
+            $imgName = preg_replace('/\s+/', '-', $request->spell_url) . '.' . $request->file('img')->getClientOriginalExtension();
+            $path = $request->file('img')->storeAs('spells', $imgName, 'public');
+        }
+
+        dd($path);
+
         Spell::create([
             'name' => $request->name,
             'spell_url' => $request->spell_url,
+            'img' => $path,
             'full_name' => $request->full_name,
             'type_id' => $request->type_id,
             'color' => $request->color,
@@ -100,9 +111,25 @@ class AdminSpellController extends Controller
     public function update(StoreSpellRequest $request, $id)
     {
         $spell = Spell::findOrFail($id);
+
+        if (!empty($request->file('img'))) {
+            $imgName = preg_replace('/\s+/', '-', $request->spell_url) . '.' . $request->file('img')->getClientOriginalExtension();
+            $path = $request->file('img')->storeAs('spells', $imgName, 'public');
+        } elseif (!empty($spell->img)) {
+            $path = $spell->img;
+        } else {
+            $path = '';
+        }
+
+        if (!empty($request->input('deleteImg'))) {
+            Storage::disk('public')->delete($spell->img);
+            $path = '';
+        }
+
         $spell->update([
             'name' => $request->name,
             'spell_url' => $request->spell_url,
+            'img' => $path,
             'full_name' => $request->full_name,
             'type_id' => $request->type_id,
             'color' => $request->color,

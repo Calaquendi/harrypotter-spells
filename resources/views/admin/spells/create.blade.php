@@ -17,7 +17,7 @@
         </div>
         @endif
 
-        <form action="{{ route('spells.store') }}" method="POST">
+        <form action="{{ route('spells.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group row justify-content-center">
@@ -35,6 +35,13 @@
                 </label>
                 <div class="col-sm-6">
                     <input id="spell_url" type="text" name="spell_url" value="{{ old('spell_url') }}" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group row justify-content-center">
+                <label for="img" class="col-sm-2 col-form-label">Paveikslėlis:</label>
+                <div class="col-sm-6">
+                <input type="file" name="img" />
                 </div>
             </div>
 

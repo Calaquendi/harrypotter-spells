@@ -10,7 +10,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-3">
-            <img src="{{ $spell->img ?? 'http://burtazodziai.lt/wp-content/uploads/2019/03/alohomora.gif' }}" class="card-img rounded-top" alt="{{ $spell->name }}">
+            <img src="{{ asset('storage/'.$spell->img) }}" class="card-img rounded-top" alt="{{ $spell->name }}">
             <div id="spellName" class="badge badge-primary mb-2 btn">{{ $spell->full_name }}</div>
             <div id="typeName"><span class="lead text-primary2 text-uppercase">Tipas:</span> <strong>{{ $spell->type->name }}</strong></div>
             <div id="spellColor"><span class="lead text-primary2 text-uppercase">Šviesa:</span> <strong>{{ $spell->color }}</strong></div>

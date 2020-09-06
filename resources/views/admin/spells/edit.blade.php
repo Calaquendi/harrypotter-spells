@@ -17,7 +17,7 @@
         </div>
         @endif
 
-        <form action="{{ route('spells.update', $spell->id) }}" method="POST">
+        <form action="{{ route('spells.update', $spell->id) }}" method="POST" enctype="multipart/form-data">
             @method('PUT')
             @csrf
 
@@ -37,6 +37,24 @@
                 <div class="col-sm-6">
                     <input id="spell_url" type="text" name="spell_url" value="{{ $spell->spell_url }}" class="form-control" />
                 </div>
+            </div>
+
+            <div class="form-group row justify-content-center">
+            <label for="name" class="col-sm-2 col-form-label">Paveikslėlis:</label>
+            <div class="col-sm-6">
+            @if (!empty($spell->img))
+                <img src="{{ asset('storage/'.$spell->img) }}" height="100px">
+                <br />
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="delete" name="deleteImg">
+                <label class="form-check-label" for="deleteImg">
+                    Ištrinti paveikslėlį?
+                </label>
+            </div>    
+            @endif
+            <br />
+            <input type="file" name="img" />
+            </div>
             </div>
 
             <div class="form-group row justify-content-center">
