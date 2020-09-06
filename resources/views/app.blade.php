@@ -10,7 +10,7 @@
     <meta name="author" content="Arwen">
     <meta name="author" content="Zay">
 
-    <title>Burtažodžiai - „Hario Poterio“ istorijoje sutikti burtažodžiai</title>
+    <title>Burtažodžiai - „Hario Poterio“ istorijoje sutinkami burtažodžiai</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
