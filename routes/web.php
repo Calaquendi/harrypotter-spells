@@ -22,6 +22,8 @@ foreach ($types as $type) {
     Route::get('/'.$type->type_url.'/{spell_url}', 'SpellController@index');
 }
 Route::post('search/{search?}', 'SearchController@postSearch');
+Route::get('search/{search?}', 'SearchController@getSearch');
+
 Auth::routes();
 
 Route::get('/admin', 'AdminController@index')->name('admin');
