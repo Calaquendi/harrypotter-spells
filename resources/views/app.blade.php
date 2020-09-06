@@ -5,8 +5,10 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="„Hario Poterio“ istorijoje sutinkami burtažodžiai, jų savybės ir aprašymai">
+    <meta name="keywords" content="Haris Poteris, burtažodžiai, Hario Poterio burtažodžiai, kerai, transfigūracija, sukūrimo kerai, užkalbėjimai, užkeikimai, prakeiksmai">
+    <meta name="author" content="Arwen">
+    <meta name="author" content="Zay">
 
     <title>Burtažodžiai - „Hario Poterio“ istorijoje sutikti burtažodžiai</title>
 
