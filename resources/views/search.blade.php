@@ -40,7 +40,7 @@
                             </div>
                             </div>
                         </div>
-                        <a href="{{ $spell->type->type_url }}/{{ $spell->spell_url }}" class="stretched-link"></a>
+                        <a href="{{ asset ($spell->type->type_url .'/'. $spell->spell_url) }}" class="stretched-link"></a>
                     </div>
                 </div>
             
