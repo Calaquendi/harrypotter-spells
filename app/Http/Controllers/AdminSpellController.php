@@ -54,8 +54,6 @@ class AdminSpellController extends Controller
             $path = $request->file('img')->storeAs('spells', $imgName, 'public');
         }
 
-        dd($path);
-
         Spell::create([
             'name' => $request->name,
             'spell_url' => $request->spell_url,
