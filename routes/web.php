@@ -16,15 +16,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@index')->name('home');
 
 $router = app()->make('router');
-$types = App\Type::all();   
+$types = App\Type::all();
 foreach ($types as $type) {
     $router->get($type->type_url, 'TypeController@index')->name($type->type_url);
-    Route::get('/'.$type->type_url.'/{spell_url}', 'SpellController@index');
+    Route::get('/' . $type->type_url . '/{spell_url}', 'SpellController@index');
 }
 Route::post('search/{search?}', 'SearchController@postSearch');
 Route::get('search/{search?}', 'SearchController@getSearch');
 
-Auth::routes();
+Auth::routes(
+    [
+        'register' => false,
+        'reset' => false,
+        'verify' => false,
+    ]
+);
 
 Route::get('/admin', 'AdminController@index')->name('admin');
 
