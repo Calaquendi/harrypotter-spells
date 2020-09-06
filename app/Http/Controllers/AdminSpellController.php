@@ -155,6 +155,7 @@ class AdminSpellController extends Controller
     public function destroy($id)
     {
         $spell = Spell::findOrFail($id);
+        Storage::disk('public')->delete($spell->img);
         $spell->delete();
 
         return redirect()->route('spells.index');
