@@ -24,7 +24,7 @@
                 <div class="card bg-primary4 shadow mb-3">
                     <div class="row no-gutters">
                         <div class="col-md-4">
-                        <img src="{{ $spell->img ?? 'http://burtazodziai.lt/wp-content/uploads/2019/03/alohomora.gif' }}" class="card-img" alt="{{ $spell->name }}">
+                        <img src="{{ asset('storage/'.$spell->img) }}" class="card-img" alt="{{ $spell->name }}">
                         </div>
                         <div class="col-md-8 align-self-center text-center">
                             <h5 class="card-title display-4 text-primary2 font-trajan">{{ $spell->name }}</h5>
