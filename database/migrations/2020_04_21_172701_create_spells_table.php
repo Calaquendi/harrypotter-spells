@@ -17,7 +17,7 @@ class CreateSpellsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('full_name');
-            $table->integer('type');
+            $table->integer('type_id');
             $table->string('color');
             $table->string('effect');
             $table->text('description');
