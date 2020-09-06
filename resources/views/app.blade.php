@@ -149,7 +149,7 @@
         <!-- Footer -->
         <footer class="py-3">
             <div class="container">
-                <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+                <p class="m-0 text-center text-primary8 copyright">&copy; 2020 Hogvartsas.LT</p>
             </div>
             <!-- /.container -->
         </footer>
