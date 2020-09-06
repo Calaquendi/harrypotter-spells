@@ -295,4 +295,8 @@ main {
     width: 360px!important;
     height: 225px!important;
   }
+  #spellsChart {
+    width: 360px!important;
+    height: 225px!important;
+  }
 }
