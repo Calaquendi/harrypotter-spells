@@ -6,9 +6,9 @@
 <div class="row justify-content-center mb-3">
     <div class="alert alert-info" role="alert">
         @if (count($spells) > 0)
-            Pagal jūsų užklausą <span class="badge badge-secondary"><strong class="h6">{{ $search ?? "Nieko neįvedet" }}</strong></span> suradome:
+            Įvestą paieškos kriterijų <span class="badge badge-secondary"><strong class="h6">{{ $search }}</strong></span> atitinkantys burtažodžiai:
         @else
-            Pagal jūsų užklausą <span class="badge badge-secondary"><strong class="h6">{{ $search ?? "Nieko neįvedet" }}</strong></span> nieko suradome:
+            Nieko neįvedei į paiešką, todėl burtažodžio nepavyko rasti.
         @endif
     </div>
 </div>
