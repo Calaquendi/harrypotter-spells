@@ -16,7 +16,9 @@ class CreateSpellsTable extends Migration
         Schema::create('spells', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('spell_url');
             $table->string('full_name');
+            $table->string('img');
             $table->integer('type_id');
             $table->string('color');
             $table->string('effect');

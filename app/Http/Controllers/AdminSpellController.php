@@ -49,8 +49,6 @@ class AdminSpellController extends Controller
             $path = $request->file('img')->storeAs('spells', $imgName, 'public');
         }
 
-        dd($path);
-
         Spell::create([
             'name' => $request->name,
             'spell_url' => $request->spell_url,
@@ -150,6 +148,7 @@ class AdminSpellController extends Controller
     public function destroy($id)
     {
         $spell = Spell::findOrFail($id);
+        Storage::disk('public')->delete($spell->img);
         $spell->delete();
 
         return redirect()->route('spells.index');
