@@ -93,7 +93,6 @@
                             backgroundColor: colors,
                             borderColor: colors,
                             borderWidth: 1,
-                            pointStyle: 'star',
                             data: {!! json_encode($spellCounts) !!}
                         }]
                     },
@@ -128,6 +127,132 @@
 
     <hr>
 
-    <div class="lead mb-3">Paieškos statistika</div>
+    <div class="row mx-0">
+        <div class="col-md-6">
+            <div class="lead mb-3">TOP 20 aplankomų burtažodžių</div>
+            <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                    <thead class="bg-primary5">
+                        <tr>
+                            <th>Burtažodis</th>
+                            <th>Apsilankymai</th>
+                        </tr>
+                    </thead>
+                    @php
+                        $spellNames = array();
+                        $spellCounts = array();
+                    @endphp
+                    @foreach ($log_spells_top as $log_spell)
+                        @php
+                            array_push($spellNames, $log_spell->spell->name);
+                            array_push($spellCounts, $log_spell->visits); 
+                        @endphp
+                        <tr>
+                            <td>{{ $log_spell->spell->name }}</td>
+                            <td>{{ $log_spell->visits }}</td>
+                        </tr>
+                    @endforeach
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <canvas id="spellsChart" width="500" height="310"></canvas>
+            <!-- Chart JS -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
+            <script>
+                var colors = [
+                    '#E1B689',
+                    '#bd524c',
+                    '#93B7BE',
+                    '#7c6880',
+                    '#3A3C55',
+                    '#383c72'
+                ];
+                var xAxisLabelMinWidth = 15;
+                var ctx = document.getElementById('spellsChart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    // The type of chart we want to create
+                    type: 'horizontalBar',
+
+                    // The data for our dataset
+                    data: {
+                        labels: {!! json_encode($spellNames) !!},
+                        datasets: [{
+                            label: 'Burtažodžių tipai',
+                            backgroundColor: colors,
+                            borderColor: colors,
+                            borderWidth: 1,
+                            data: {!! json_encode($spellCounts) !!}
+                        }]
+                    },
+
+                    // Configuration options go here
+                    options: {
+                        responsive: true,
+                        legend: {
+                            display: false
+                        },
+                        scales: {
+                            xAxes: [{
+                                ticks: {
+                                    beginAtZero: true,
+                                    stepSize: 1
+                                }
+                            }]
+                        }
+                    }
+                });
+                function fitChart(){
+                    var chartCanvas = document.getElementById('spellsChart');
+                    var maxWidth = chartCanvas.parentElement.parentElement.clientWidth;
+                    var width = Math.max(chart.data.labels.length * xAxisLabelMinWidth, maxWidth);
+
+                    chartCanvas.parentElement.style.width = width +'px';
+                }
+                fitChart();
+            </script>
+        </div>
+    </div>
+
+    <div class="row mx-0">
+        <div class="col-md-6">
+            <div class="lead mb-3">TOP 10 paieškos užklausų</div>
+            <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                    <thead class="bg-primary5">
+                        <tr>
+                            <th>Paieška</th>
+                            <th>Apsilankymai</th>
+                        </tr>
+                    </thead>
+                    @foreach ($log_searches_top as $log_search)
+                        <tr>
+                            <td>{{ $log_search->search }}</td>
+                            <td>{{ $log_search->visits }}</td>
+                        </tr>
+                    @endforeach
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="lead mb-3">10 paskutinių paieškos užklausų</div>
+            <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                    <thead class="bg-primary5">
+                        <tr>
+                            <th>Paieška</th>
+                            <th>Apsilankymai</th>
+                        </tr>
+                    </thead>
+                    @foreach ($log_last_searches as $log_search)
+                        <tr>
+                            <td>{{ $log_search->search }}</td>
+                            <td>{{ $log_search->visits }}</td>
+                        </tr>
+                    @endforeach
+                </table>
+            </div>
+        </div>
+    </div>
 
 @endsection
