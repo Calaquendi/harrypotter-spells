@@ -21,17 +21,15 @@
             @csrf
 
             <div class="form-group row justify-content-center">
-                <label for="name" class="col-sm-2 col-form-label">Pavadinimas:</label>
+                <label for="name" class="col-sm-2 col-form-label">Pavadinimas<span class="text-primary3" data-toggle="tooltip" data-placement="top" title="Būtina įrašyti">*</span>:</label>
                 <div class="col-sm-6">
                     <input id="name" type="text" name="name" value="{{ old('name') }}" class="form-control" />
                 </div>
             </div>
 
             <div class="form-group row justify-content-center">
-                <label for="spell_url" class="col-sm-2 col-form-label">
-                    Nuoroda (be LT raidžių ir tarpų):
-                    <br />
-                    <span class="badge badge-dark">{{ config('app.url')  }}/</span>
+                <label for="spell_url" class="col-sm-2 col-form-label" data-toggle="tooltip" data-placement="top" title="Be lietuviškų raidžių ir tarpų, pvz. įrašius 'alohomora' gaunamas rezultatas - {{ config('app.url')  }}/alohomora">
+                    Nuoroda<span class="text-primary3" data-toggle="tooltip" data-placement="top" title="Būtina įrašyti">*</span> <i class="far fa-question-circle"></i>:
                 </label>
                 <div class="col-sm-6">
                     <input id="spell_url" type="text" name="spell_url" value="{{ old('spell_url') }}" class="form-control" />
@@ -46,7 +44,7 @@
             </div>
 
             <div class="form-group row justify-content-center">
-                <label for="full_name" class="col-sm-2 col-form-label">Pilnas pavadinimas:</label>
+                <label for="full_name" class="col-sm-2 col-form-label">Pilnas pavadinimas<span class="text-primary3" data-toggle="tooltip" data-placement="top" title="Būtina įrašyti">*</span>:</label>
                 <div class="col-sm-6">
                     <input id="full_name" type="text" name="full_name" value="{{ old('full_name') }}" class="form-control" />
                 </div>
@@ -71,14 +69,14 @@
             </div>
 
             <div class="form-group row justify-content-center">
-                <label for="effect" class="col-sm-2 col-form-label">Efektas:</label>
+                <label for="effect" class="col-sm-2 col-form-label">Efektas<span class="text-primary3" data-toggle="tooltip" data-placement="top" title="Būtina įrašyti">*</span>:</label>
                 <div class="col-sm-6">
                     <input id="effect" type="text" name="effect" value="{{ old('effect') }}" class="form-control" />
                 </div>
             </div>
 
             <div class="form-group row justify-content-center">
-                <label for="description" class="col-sm-2 col-form-label">Aprašymas:</label>
+                <label for="description" class="col-sm-2 col-form-label">Aprašymas<span class="text-primary3" data-toggle="tooltip" data-placement="top" title="Būtina įrašyti">*</span>:</label>
                 <div class="col-sm-6">
                     <textarea id="description" name="description" class="form-control">{{ old('description') }}</textarea>
                 </div>

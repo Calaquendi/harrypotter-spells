@@ -22,17 +22,15 @@
             @csrf
 
             <div class="form-group row justify-content-center">
-                <label for="name" class="col-sm-2 col-form-label">Pavadinimas:</label>
+                <label for="name" class="col-sm-2 col-form-label">Pavadinimas<span class="text-primary3" data-toggle="tooltip" data-placement="top" title="Būtina įrašyti">*</span>:</label>
                 <div class="col-sm-6">
                     <input id="name" type="text" name="name" value="{{ $spell->name }}" class="form-control" />
                 </div>
             </div>
 
             <div class="form-group row justify-content-center">
-                <label for="spell_url" class="col-sm-2 col-form-label">
-                    Nuoroda (be LT raidžių ir tarpų):
-                    <br />
-                    <span class="badge badge-dark">{{ config('app.url')  }}/</span>
+                <label for="spell_url" class="col-sm-2 col-form-label" data-toggle="tooltip" data-placement="top" title="Be lietuviškų raidžių ir tarpų, pvz. įrašius 'alohomora' gaunamas rezultatas - {{ config('app.url')  }}/alohomora">
+                    Nuoroda<span class="text-primary3" data-toggle="tooltip" data-placement="top" title="Būtina įrašyti">*</span> <i class="far fa-question-circle"></i>:
                 </label>
                 <div class="col-sm-6">
                     <input id="spell_url" type="text" name="spell_url" value="{{ $spell->spell_url }}" class="form-control" />
@@ -40,25 +38,25 @@
             </div>
 
             <div class="form-group row justify-content-center">
-            <label for="name" class="col-sm-2 col-form-label">Paveikslėlis:</label>
-            <div class="col-sm-6">
-            @if (!empty($spell->img))
-                <img src="{{ asset('storage/'.$spell->img) }}" height="100px">
-                <br />
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="delete" name="deleteImg">
-                <label class="form-check-label" for="deleteImg">
-                    Ištrinti paveikslėlį?
-                </label>
-            </div>    
-            @endif
-            <br />
-            <input type="file" name="img" />
-            </div>
+                <label for="name" class="col-sm-2 col-form-label">Paveikslėlis:</label>
+                <div class="col-sm-6">
+                    @if (!empty($spell->img))
+                    <img src="{{ asset('storage/'.$spell->img) }}" height="100px">
+                    <br />
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="delete" name="deleteImg">
+                        <label class="form-check-label" for="deleteImg">
+                            Ištrinti paveikslėlį?
+                        </label>
+                    </div>
+                    @endif
+                    <br />
+                    <input type="file" name="img" />
+                </div>
             </div>
 
             <div class="form-group row justify-content-center">
-                <label for="name" class="col-sm-2 col-form-label">Pilnas pavadinimas:</label>
+                <label for="name" class="col-sm-2 col-form-label">Pilnas pavadinimas<span class="text-primary3" data-toggle="tooltip" data-placement="top" title="Būtina įrašyti">*</span>:</label>
                 <div class="col-sm-6">
                     <input id="full_name" type="text" name="full_name" value="{{ $spell->full_name }}" class="form-control" />
                 </div>
@@ -69,7 +67,7 @@
                 <div class="col-sm-6">
                     <select id="type_id" name="type_id" class="form-control">
                         @foreach($types as $type)
-                            <option value="{{ $type->id }}" @if ($type->id == $spell->type_id) selected @endif>{{ $type->name }}</option>
+                        <option value="{{ $type->id }}" @if ($type->id == $spell->type_id) selected @endif>{{ $type->name }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -81,16 +79,16 @@
                     <input id="color" type="text" name="color" value="{{ $spell->color }}" class="form-control" />
                 </div>
             </div>
-        
+
             <div class="form-group row justify-content-center">
-                <label for="effect" class="col-sm-2 col-form-label">Efektas:</label>
+                <label for="effect" class="col-sm-2 col-form-label">Efektas<span class="text-primary3" data-toggle="tooltip" data-placement="top" title="Būtina įrašyti">*</span>:</label>
                 <div class="col-sm-6">
                     <input id="effect" type="text" name="effect" value="{{ $spell->effect }}" class="form-control" />
                 </div>
             </div>
 
             <div class="form-group row justify-content-center">
-                <label for="description" class="col-sm-2 col-form-label">Aprašymas:</label>
+                <label for="description" class="col-sm-2 col-form-label">Aprašymas<span class="text-primary3" data-toggle="tooltip" data-placement="top" title="Būtina įrašyti">*</span>:</label>
                 <div class="col-sm-6">
                     <textarea id="description" name="description" class="form-control">{{ $spell->description }}</textarea>
                 </div>
@@ -109,21 +107,21 @@
                     <textarea id="history" name="history" class="form-control">{{ $spell->history }}</textarea>
                 </div>
             </div>
-        
+
             <div class="form-group row justify-content-center">
                 <label for="effect_full" class="col-sm-2 col-form-label">Kerėjimas ir poveikis:</label>
                 <div class="col-sm-6">
                     <textarea id="effect_full" name="effect_full" class="form-control">{{ $spell->effect_full }}</textarea>
                 </div>
             </div>
-            
+
             <div class="form-group row justify-content-center">
                 <label for="additional_title" class="col-sm-2 col-form-label">Papildomos skilties pavadinimas:</label>
                 <div class="col-sm-6">
                     <input id="additional_title" type="text" name="additional_title" value="{{ $spell->additional_title }}" class="form-control" />
                 </div>
             </div>
-        
+
             <div class="form-group row justify-content-center">
                 <label for="additional" class="col-sm-2 col-form-label">Papildoma informacija:</label>
                 <div class="col-sm-6">
@@ -143,7 +141,7 @@
                     <input type="submit" class="btn btn-info btn-sm" value="Išsaugoti" />
                 </div>
             </div>
-        
+
         </form>
 
     </div>
