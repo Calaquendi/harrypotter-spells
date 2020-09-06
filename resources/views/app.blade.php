@@ -30,6 +30,7 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/spellbook.css') }}" rel="stylesheet">
 
+    @include('analytics')
 </head>
 
 <body>
