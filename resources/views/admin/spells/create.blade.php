@@ -28,18 +28,21 @@
             </div>
 
             <div class="form-group row justify-content-center">
-                <label for="spell_url" class="col-sm-2 col-form-label" data-toggle="tooltip" data-placement="top" title="Be lietuviškų raidžių ir tarpų, pvz. įrašius 'alohomora' gaunamas rezultatas - {{ config('app.url')  }}/alohomora">
-                    Nuoroda<span class="text-primary3" data-toggle="tooltip" data-placement="top" title="Būtina įrašyti">*</span> <i class="far fa-question-circle"></i>:
+                <label for="spell_url" class="col-sm-2 col-form-label">
+                    Nuoroda<span class="text-primary3" data-toggle="tooltip" data-placement="top" title="Būtina įrašyti">*</span></i>:
                 </label>
-                <div class="col-sm-6">
-                    <input id="spell_url" type="text" name="spell_url" value="{{ old('spell_url') }}" class="form-control" />
+                <div class="col-sm-6 input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">{{ config('app.url')  }}/</div>
+                    </div>
+                    <input id="spell_url" type="text" name="spell_url" value="{{ old('spell_url') }}" class="form-control" data-toggle="tooltip" data-placement="top" title="Be lietuviškų raidžių ir tarpų" />
                 </div>
             </div>
 
             <div class="form-group row justify-content-center">
                 <label for="img" class="col-sm-2 col-form-label">Paveikslėlis:</label>
                 <div class="col-sm-6">
-                <input type="file" name="img" />
+                    <input type="file" name="img" />
                 </div>
             </div>
 
@@ -55,7 +58,7 @@
                 <div class="col-sm-6">
                     <select id="type_id" name="type_id" class="form-control">
                         @foreach($types as $type)
-                            <option value="{{ $type->id }}" @if ($type->id == old('type_id')) selected @endif>{{ $type->name }}</option>
+                        <option value="{{ $type->id }}" @if ($type->id == old('type_id')) selected @endif>{{ $type->name }}</option>
                         @endforeach
                     </select>
                 </div>
