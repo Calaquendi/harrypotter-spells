@@ -20,7 +20,7 @@
     </header>
     <header class="input-group my-4 justify-content-center d-md-none">
         <p class="lead input-group justify-content-center">„Hario Poterio“ pasaulyje naudojami</p>
-        <h1 class="display-4 text-uppercase input-group justify-content-center">Burtažodžiai</h1>
+        <h1 class="display-4 text-uppercase input-group justify-content-center" id="main-title">Burtažodžiai</h1>
     </header>
 
     <div style="margin-top:15vh;">

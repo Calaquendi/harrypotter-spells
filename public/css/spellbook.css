@@ -299,4 +299,15 @@ main {
     width: 360px!important;
     height: 225px!important;
   }
+  #main-title {
+    font-size: 3.2rem;
+  }
+  #input-search {
+    font-size: 1.2rem;
+    height: 5rem;
+  }
+  #button-search {
+    height: 5rem;
+    width: 5rem;
+  }
 }
