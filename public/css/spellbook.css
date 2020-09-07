@@ -91,7 +91,7 @@ nav.navbar {
   background-color: var(--primary1);
 }
 .navbar-collapse.collapse.show {
-  background-color: var(--primary1);
+  background-color: var(--primary4);
 }
 .navbar-nav .nav-item.active .nav-link {
 box-shadow: 0 1px 0 #FFF;
