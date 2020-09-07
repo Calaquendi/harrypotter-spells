@@ -12,3 +12,4 @@ npm-debug.log
 yarn-error.log
 analytics.blade.php
 /.well-known
+/public/.well-known
