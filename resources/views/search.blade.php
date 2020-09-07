@@ -22,12 +22,19 @@
             
                 <div class="card bg-primary4 shadow mb-3">
                     <div class="row no-gutters">
-                        <div class="col-md-4">
-                        <img src="{{ asset('storage/'.$spell->img) }}" class="card-img" alt="{{ $spell->name }}">
-                        </div>
-                        <div class="col-md-8 align-self-center text-center">
-                            <h5 class="card-title display-4 text-primary2 font-trajan">{{ $spell->name }}</h5>
-                        </div>
+                        @if(!empty($spell->img))
+                            <div class="col-md-8 align-self-center text-center">
+                                <h5 class="card-title display-4 text-primary2 font-trajan">{{ $spell->name }}</h5>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="{{ asset('storage/'.$spell->img) }}" class="card-img" alt="{{ $spell->name }}">
+                            </div>
+                        @else
+                            <div class="col-md-12 align-self-center text-center">
+                                <h5 class="card-title display-4 text-primary2 font-trajan">{{ $spell->name }}</h5>
+                            </div>
+                        @endif
+                        
                         <div class="col-md-12">
                             <div class="card-body bg-primary1 px-0 text-center">
                                 <div class="row justify-content-center">
