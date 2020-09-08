@@ -292,11 +292,11 @@ main {
 }
 @media only screen and (max-width: 420px) {
   #typesChart {
-    width: 360px!important;
+    width: 100%!important;
     height: 225px!important;
   }
   #spellsChart {
-    width: 360px!important;
+    width: 100%!important;
     height: 225px!important;
   }
   #main-title {
