@@ -149,7 +149,7 @@ div#spellName.badge-primary {
 div#spellName.btn:hover {
   color: var(--primary6);
 }
-#input-search, #button-search {
+#input-search, #button-search { /* index big one */
   height: 7rem;
   font-size: 2rem;
   background: rgb(116 116 116 / 25%)!important;
@@ -167,13 +167,25 @@ div#spellName.btn:hover {
   color: var(--primary1);
   background: var(--primary6)!important;
 }
-#input-search:focus ~ .input-group-append #button-search {
+#input-search:focus ~ .input-group-append #button-search { 
   color: var(--primary1);
   background: var(--primary6)!important;
+}
+#search-input { /* small one */
+  background: #FFF;
+  width: 15rem;
+  margin-right: -30px;
+  padding-right: 30px;
+  border-style: solid;
+  outline: none;
+  box-shadow: none;
 }
 @media only screen and (max-width: 480px) {
   #input-search, #button-search {
     font-size: 1.8rem;
+  }
+  #search-input {
+    width: 20.5rem!important;
   }
 }
 #carouselTipes {
@@ -185,15 +197,6 @@ div#spellName.btn:hover {
 }
 #typeName, #spellColor, #spellEffect {
   padding: 0.5em;
-}
-#search-input {
-  background: #FFF;
-  width: 15rem;
-  margin-right: -35px;
-  padding-right: 35px;
-  border-style: solid;
-  outline: none;
-  box-shadow: none;
 }
 
 .dropdown-menu a {

@@ -118,13 +118,12 @@
                     {!! Form::open(array('url' => 'search', 'files' => true, 'class' => 'form-inline my-2 my-lg-0 mr-2 ml-auto')) !!}
                     {{ csrf_field() }}
                     <div class="input-group form-inline">
-                        <div id="search-wrapper">
+                        <div class="input-group-prepend">
                             <input id="search-input" name="search" type="text" class="form-control form-control-sm" placeholder="Burtažodžio paieška"
                                 aria-label="Burtažodžio paieška" aria-describedby="button-search">
                             <button id="search-button" type="submit" class="btn btn-sm btn-outline-light text-dark border-0 my-sm-0"><i class="fas fa-search"></i></button>
                         </div>
-                    </div>
-                   
+                    </div>                   
                     {!! Form::close() !!}
                 @endif
             </div>
