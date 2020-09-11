@@ -17,7 +17,7 @@ class AdminSpellController extends Controller
      */
     public function index()
     {
-        $spells = Spell::all();
+        $spells = Spell::paginate(20);
         return view('admin.spells.index', compact('spells'));
     }
 
