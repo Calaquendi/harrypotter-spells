@@ -17,7 +17,7 @@ class AdminSpellController extends Controller
      */
     public function index()
     {
-        $spells = Spell::paginate(20);
+        $spells = Spell::orderBy('name', 'ASC')->paginate(20);
         return view('admin.spells.index', compact('spells'));
     }
 
