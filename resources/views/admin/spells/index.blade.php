@@ -14,18 +14,20 @@
             <table class="table table-striped table-sm">
                 <thead class="bg-primary5">
                     <tr>
-                        <th scope="col">#</th>
                         <th scope="col">Pavadinimas</th>
                         <th scope="col">Tipas</th>
+
                         <th scope="col"></th>
                     </tr>
                 </thead>
                 @foreach ($spells as $spell)
                     <tr scope="row">
-                        <td>{{ $spell->id }}</td>
                         <td>{{ $spell->name }}</td>
                         <td>{{ $spell->type->name }}</td>
+
                         <td class="text-right">
+                            {!! ($spell->quote) ? '<i class="fas fa-quote-left text-muted" title="Citata"></i>' : '' !!}
+                            {!! ($spell->img) ? '<i class="far fa-image text-muted" title="Paveiksliukas"></i>' : '' !!}
                             <a class="btn btn-primary btn-sm" href="{{ route('spells.edit', $spell->id) }}">Keisti</a>
 
                             <form action="{{ route('spells.destroy', $spell->id) }}" method="POST" style="display: inline">
