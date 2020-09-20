@@ -15,7 +15,7 @@ class AdminTypeController extends Controller
      */
     public function index()
     {
-        $types = Type::all();
+        $types = Type::orderBy('name', 'ASC')->get();
 
         return view('admin.types.index', compact('types'));
     }

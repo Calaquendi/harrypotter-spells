@@ -17,7 +17,7 @@ class AdminUsersController extends Controller
     public function index()
     {
 
-        return view('admin.users.index', array( 'meta_title' => 'Admin > Users', 'users' => User::all() ));
+        return view('admin.users.index', array( 'meta_title' => 'Admin > Users', 'users' => User::orderBy('name', 'ASC')->get() ));
     }
 
 
