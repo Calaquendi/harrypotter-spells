@@ -38,16 +38,21 @@
                         <div class="col-md-12">
                             <div class="card-body bg-primary1 px-0 text-center">
                                 <div class="row justify-content-center">
-                                <ul class="list-group list-group-horizontal">
-                                    <li class="list-group-item bg-transparent border-0"><span id="typeName"><span class="lead text-primary2 text-uppercase">Tipas:</span> <strong>{{ $spell->type->name }}</strong></span></li>
-                                    <li class="list-group-item bg-transparent border-0"><span id="spellColor"><span class="lead text-primary2 text-uppercase">Šviesa:</span> <strong>{{ $spell->color }}</strong></span></li>
-                                    <li class="list-group-item bg-transparent border-0"><span id="spellEffect"><span class="lead text-primary2 text-uppercase">Efektas:</span> <strong>{{ $spell->effect }}</strong></span></li>
-                                </ul>
-                            </div>
+                                    <ul class="list-group list-group-horizontal">
+                                        <li class="list-group-item bg-transparent border-0"><span id="typeName"><span class="lead text-primary2 text-uppercase">Tipas:</span> <strong>{{ $spell->type->name }}</strong></span></li>
+                                        <li class="list-group-item bg-transparent border-0"><span id="spellColor"><span class="lead text-primary2 text-uppercase">Šviesa:</span> <strong>{{ $spell->color }}</strong></span></li>
+                                        <li class="list-group-item bg-transparent border-0"><span id="spellEffect"><span class="lead text-primary2 text-uppercase">Efektas:</span> <strong>{{ $spell->effect }}</strong></span></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                        <a href="{{ asset ($spell->type->type_url .'/'. $spell->spell_url) }}" class="stretched-link"></a>
+                        
                     </div>
+                    <a href="{{ asset ($spell->type->type_url .'/'. $spell->spell_url) }}" class="stretched-link"></a>
+                    <div class="row justify-content-center bg-primary1 m-0">
+                    <hr class="bg-dark w-25 m-0"/>
+                    </div>
+                    <button class="btn bg-primary1 text-primary3 font-weight-bold font-trajan rounded-0">Skaityti pilną aprašymą</button>
                 </div>
         </div>
     </div <!-- /.row -->
