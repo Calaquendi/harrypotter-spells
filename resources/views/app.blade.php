@@ -27,6 +27,9 @@
     <!-- Custom js for this template -->
     <script defer src="{{ asset('js/spellbook.js') }}"></script>
 
+     <!-- CKEditor JS-->
+    <script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script>
+
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/spellbook.css') }}" rel="stylesheet">
 
@@ -153,6 +156,18 @@
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
+    <script>
+        var Textareas = document.querySelectorAll('textarea');
+        for (var i = 0; i < Textareas.length; ++i) {
+            ClassicEditor
+                .create( Textareas[i], {
+                    removePlugins: [ 'Heading', 'ImageUpload' ]
+                } )
+                .catch( error => {
+                    console.error( error );
+                } );
+        }
+    </script>
 </body>
 
 </html>
