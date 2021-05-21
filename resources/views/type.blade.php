@@ -33,7 +33,7 @@
                         $azInd = $spell->name[0];
                     }
                 @endphp
-                <li class="lead"><a href="{{ $spell->type->type_url }}/{{ $spell->spell_url }}">{{ $spell->name }}</a></li>
+                <li class="lead"><a href="{{ $spell->type->type_url }}/{{ $spell->spell_url }}" title="{{ $spell->name }}">{{ $spell->name }}</a></li>
             @endforeach
         </ul>
     </div>
