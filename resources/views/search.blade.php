@@ -8,9 +8,14 @@
         @if (count($spells) > 0)
             Įvestą paieškos kriterijų <span class="badge badge-secondary"><strong class="h6">{{ $search }}</strong></span> atitinkantys burtažodžiai:
         @else
-            Nieko neįvedei į paiešką, todėl burtažodžio nepavyko rasti.
+            Nieko neįvedei į paiešką, todėl burtažodžio nepavyko rasti.  
         @endif
     </div>
+</div>
+<div class="row justify-content-center mb-3">
+    @if (count($spells) == 0)
+        <img src="{{asset('/img/sad_harry.gif')}}">
+    @endif
 </div>
 
 @if ($search != null)
