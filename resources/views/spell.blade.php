@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-sm-3">
                     @if(!empty($spell->img))
-                        <img src="{{ asset('storage/'.$spell->img) }}" class="card-img rounded-top" title="{{ $spell->name }}">
+                        <img src="{{ asset('storage/'.$spell->img) }}" class="card-img rounded-top" alt="{{ $spell->name }}" title="{{ $spell->name }}">
                     @endif
                     <div id="spellName" class="badge badge-primary mb-2 btn">{{ $spell->full_name }}</div>
                     <div id="typeName"><span class="lead text-primary2 text-uppercase">Tipas:</span> <strong>{{ $spell->type->name }}</strong></div>
