@@ -71,8 +71,6 @@
             @if (count($typeNames) > 0 && count($spellCounts) > 0)
                 <div class="col-md-4">
                     <canvas id="typesChart" width="500" height="310"></canvas>
-                    <!-- Chart JS -->
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
                     <script>
                         var colors = [
                             '#E1B689',
@@ -164,8 +162,6 @@
             @if (count($spellNames) > 0 && count($spellCounts) > 0)
                 <div class="col-md-6">
                         <canvas id="spellsChart" width="500" height="310"></canvas>
-                        <!-- Chart JS -->
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
                         <script>
                             var colors = [];
                             for(i=1; i<=10; i++){
