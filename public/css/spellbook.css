@@ -71,12 +71,20 @@ font-weight: normal;
 }
 html, body {
   padding-top: 56px;
-  /*background-color: var(--primary1);*/
   background: linear-gradient(90deg,var(--primary1),var(--primary4));
   color: var(--primary5);
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+.bg-main {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url(/img/bg-main.png);
+  background-size: cover;
 }
 a, a:focus {
   color: var(--primary6);
@@ -112,6 +120,7 @@ footer {
 h1#spellTitle {
   font-family: TrajanPro;
   color: var(--primary2);
+  text-shadow: 5px 0px 5px hsl(0deg 0% 0% / 80%);
 }
 
 /* Main Page */
@@ -150,15 +159,15 @@ div#spellName.btn:hover {
   color: var(--primary6);
 }
 #input-search, #button-search { /* index big one */
-  height: 7rem;
+  height: 5rem;
   font-size: 2rem;
-  background: rgb(116 116 116 / 25%)!important;
+  background: rgb(255 255 255 / 10%)!important;
   border-color: transparent;
   box-shadow: 0 0 0 1px rgb(0 0 0 / 25%);
   transition: 0.3s ease-in-out;
 }
 #button-search {
-  width: 7rem;
+  width: 5rem;
 }
 #button-search:hover {
   color: var(--primary3);
@@ -198,7 +207,6 @@ div#spellName.btn:hover {
 #typeName, #spellColor, #spellEffect {
   padding: 0.5em;
 }
-
 .dropdown-menu a {
   color: var(--primary1);
 }

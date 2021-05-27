@@ -18,6 +18,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        z-index: 1000;
     }
     .accio {
         font-size: 2.5rem;
@@ -30,7 +31,7 @@
 </style>
 <div class="parent">
     <div class="child">
-        <img src="img/sad_harry.gif" style="transform: scaleX(-1);">
+        <img src="{{asset('/img/sad_harry.gif')}}" style="transform: scaleX(-1);">
         <span class="accio">Accio</span> <span class="error">404</span>
     </div>
 </div>

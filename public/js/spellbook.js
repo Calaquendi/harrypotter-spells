@@ -1,15 +1,4 @@
 $(document).ready(function() {
-    //Parallax
-    if (location.pathname == "/") {
-        var scene = document.getElementById('parallax-scene');
-        var parallaxInstance = new Parallax(scene, {
-            relativeInput: true,
-            frictionX: 0.2,
-            frictionY: 0.2
-        });
-    }
-    //End of Parallax
-
     //Navbar background on scrolling
     $(window).scroll(function() {
         var position = $(window).scrollTop();
