@@ -42,7 +42,7 @@ class GenerateSitemap extends Command
         SitemapIndex::create()
             ->add($appurl . '/' . $indexMenu)
             ->add($appurl . '/' . $indexSpells)
-            //->add($appurl . '/' . $indexImages)
+            ->add($appurl . '/' . $indexImages)
             ->writeToFile(public_path($sitemapFile));
 
         //generate menu.xml sitemap
@@ -72,18 +72,30 @@ class GenerateSitemap extends Command
         $spells_sitemap->writeToFile(public_path($indexSpells));
 
         //generate images.xml sitemap
-        /*
-        $images_sitemap = Sitemap::create();
+        $imageXml = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">';
         $spells = Spell::all();
         foreach ($spells as $key => $spell) {
-            if ($key == 0) {
+            if(!empty($spell->img)) {
                 $type = Type::findOrFail($spell->type_id);
-                $images_sitemap->add(Url::create($type->type_url . '/' . $spell->spell_url)->setChangeFrequency(0)->setPriority(0));
-                $images_sitemap->add("image");
-                dump($spell->img);
+                $spell_url = $appurl . '/' . $type->type_url . '/' . $spell->spell_url;
+                $spell_image_url = $appurl . '/storage/' . $spell->img;
+                $image_title = $spell->name;
+
+$imageXml .= '
+    <url>
+        <loc>' . $spell_url  . '</loc>
+        <image:image>
+            <image:loc>'. $spell_image_url . '</image:loc>
+            <image:title><![CDATA[ '. $image_title . ' ]]></image:title>
+        </image:image>
+    </url>';
             }
         }
-        $images_sitemap->writeToFile(public_path($indexImages));
-        */
-    }
+$imageXml .='
+</urlset>';
+
+        $myfile = fopen(public_path("images.xml"), "w");
+        fwrite($myfile, $imageXml);
+        fclose($myfile);
+    }  
 }
