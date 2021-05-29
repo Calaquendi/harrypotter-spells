@@ -14,15 +14,13 @@
     @endforeach
     <div class="lead mb-3">
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb bg-transparent text-primary1">
+            <ol class="breadcrumb bg-transparent text-primary1 py-0 px-0" id="breadcrumb">
                 <li class="breadcrumb-item" aria-current="page"><span class="badge bg-info text-light">{{ $countTypes }}</span> Tipai</li>
                 <li class="breadcrumb-item" aria-current="page"><span class="badge bg-info text-light">{{ $spells->count() }}</span> Burtažodžiai</li>
                 <li class="breadcrumb-item" aria-current="page"><span class="badge bg-info text-light">{{ $users->count() }}</span> Vartotojai</li>
             </ol>
         </nav>
     </div> <!-- .lead mb-3 End -->
-
-    <hr>
 
     @if ($types->count() > 0)
         <div class="lead mb-3">Burtažodžių tipai</div>
