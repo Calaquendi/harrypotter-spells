@@ -293,6 +293,10 @@ main {
   color: var(--primary3);
 }
 
+#breadcrumb {
+  font-size: .8em;
+}
+
 @media only screen and (max-width: 991px) {
   #navbarResponsive {
     margin-left: -1rem;
