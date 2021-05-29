@@ -22,7 +22,7 @@
     @endif
    
     <div class="row mb-3">
-        <ul id="typeList" class="list-unstyled">
+        <ul id="typeList" class="list-unstyled ml-5">
             @php
                 $azInd = null;
             @endphp
