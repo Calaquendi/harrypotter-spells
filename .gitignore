@@ -13,3 +13,4 @@ yarn-error.log
 analytics.blade.php
 /.well-known
 /public/.well-known
+*.xml
