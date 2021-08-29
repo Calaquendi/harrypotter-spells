@@ -131,8 +131,16 @@ blockquote#randomQuote {
   color: white;
 }
 
+/* Type Page */
 
-
+@media screen and (min-width: 420px) {
+  #typeList {
+    column-count: 3;
+    column-gap: 4em;
+    column-width: 200px;
+    column-fill: balance;
+  }
+}
 /* Spell Page */
 
 header {
@@ -295,6 +303,12 @@ main {
 
 #breadcrumb {
   font-size: .8em;
+}
+
+@media only screen and (max-width: 420px) {
+  .breadcrumb {
+    width: 170px;
+  }
 }
 
 @media only screen and (max-width: 991px) {
