@@ -1,5 +1,7 @@
 @extends('admin.dashboard')
 
+@section('title', 'Nauja burtažodžių rūšis' )
+
 @section('admin_content')
 <div class="container-fluid">
 

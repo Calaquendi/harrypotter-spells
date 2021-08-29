@@ -1,5 +1,7 @@
 @extends('admin.dashboard')
 
+@section('title', 'Vartotojo redagavimas' )
+
 @section('admin_content')
 <div class="container-fluid">
 

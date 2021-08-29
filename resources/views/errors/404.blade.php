@@ -1,13 +1,13 @@
 @extends('errors::minimal')
 
-@section('title', __('Not Found'))
+@section('title', __('Puslapis nerastas'))
 {{--
 @section('code', '404')
 --}}
 @if($exception)
     @section('message', $exception->getMessage())
 @else
-    @section('message', __('Not Found'))
+    @section('message', __('Puslapis nerastas'))
 @endif
 <style>
     .parent {

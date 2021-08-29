@@ -6,6 +6,9 @@
 
     @if($spells->count() > 0)
         @foreach ($spells as $spell)
+
+        @section('title', $spell->name )
+        
         <h1 class="display-4 my-4 text-center" id="spellTitle">{{ $spell->name }}</h1>
 
         <div class="row">

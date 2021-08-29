@@ -1,5 +1,7 @@
 @extends('app')
 
+@section('title', 'Valdymo skydelis' )
+
 <!-- Chart JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
 
@@ -19,7 +21,7 @@
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ route('admin') }}">
-                            <i class="fas fa-columns"></i> Dashboard <span class="sr-only">(current)</span>
+                            <i class="fas fa-columns"></i> Valdymo skydelis <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -43,7 +45,7 @@
   
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 bg-white">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="text-primary8">Dashboard</h1>
+                <h1 class="text-primary8">Valdymo skydelis</h1>
             </div>
             
             <!-- Page Content -->

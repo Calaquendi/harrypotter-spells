@@ -1,5 +1,7 @@
 @extends('app')
 
+@section('title', $typeName )
+
 @section('content')
 <div class="container">
 <!-- Page Features -->

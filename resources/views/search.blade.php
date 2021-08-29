@@ -6,8 +6,10 @@
 <div class="row justify-content-center mb-3">
     <div class="alert alert-info" role="alert">
         @if (count($spells) > 0)
+            @section('title', 'Paieškos rezultatai' )
             Įvestą paieškos kriterijų <span class="badge badge-secondary"><strong class="h6">{{ $search }}</strong></span> atitinkantys burtažodžiai:
         @else
+            @section('title', 'Nieko nerasta' )
             Nieko neįvedei į paiešką, todėl burtažodžio nepavyko rasti.  
         @endif
     </div>
