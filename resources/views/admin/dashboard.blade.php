@@ -56,3 +56,15 @@
         </main>
     </div>
 </div>
+<script>
+    var Textareas = document.querySelectorAll('textarea');
+    for (var i = 0; i < Textareas.length; ++i) {
+        ClassicEditor
+            .create( Textareas[i], {
+                removePlugins: [ 'Heading', 'ImageUpload' ]
+            } )
+            .catch( error => {
+                console.error( error );
+            } );
+    }
+</script>
